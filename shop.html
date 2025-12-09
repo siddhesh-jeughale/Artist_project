@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Artistry Studio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Artistry Studio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Art Shop</h1>
+            <p class="fade-in delay-1">Original paintings and limited edition prints available for purchase</p>
+        </div>
+    </section>
+
+     <!-- Shop Filters -->
+    <div class="container mt-5">
+        <div class="shop-filters">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                    <div class="filter-group">
+                        <strong class="me-3">Filter by:</strong>
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All Items</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="original">Originals</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="print">Prints</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="available">Available</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sort-dropdown ms-lg-auto">
+                        <strong class="me-2">Sort by:</strong>
+                        <select class="form-select d-inline-block w-auto" id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <section class="compact-section">
+        <div class="container">
+            <div class="row" id="shopItems">
+                <!-- Shop Item 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1200" data-date="2023">
+                    <div class="shop-item fade-in">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Abstract Harmony">
+                            <span class="original-badge">Original</span>
+                            <span class="availability-badge">In Stock</span>
+                            <button class="wishlist-btn" data-item="1">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Abstract Harmony</h4>
+                            <p class="text-muted">Oil on Canvas • 36" x 48" • 2023</p>
+                            <p>A vibrant abstract piece that explores color relationships and emotional expression through bold brushwork and layered textures.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$1,200</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="1">-</button>
+                                    <span class="quantity mx-2" data-item="1">1</span>
+                                    <button class="quantity-btn plus" data-item="1">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="1" data-price="1200">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Item 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="print" data-price="85" data-date="2023">
+                    <div class="shop-item fade-in delay-1">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Mountain Serenity">
+                            <span class="original-badge print-badge">Limited Print</span>
+                            <span class="availability-badge">In Stock</span>
+                            <button class="wishlist-btn" data-item="2">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Mountain Serenity</h4>
+                            <p class="text-muted">Watercolor Print • 24" x 30" • Edition of 50</p>
+                            <p>A serene mountain landscape capturing the peace of nature in delicate watercolor. Printed on archival paper with fade-resistant inks.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$85</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="2">-</button>
+                                    <span class="quantity mx-2" data-item="2">1</span>
+                                    <button class="quantity-btn plus" data-item="2">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="2" data-price="85">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Item 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="950" data-date="2022">
+                    <div class="shop-item fade-in delay-2">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Floral Symphony">
+                            <span class="original-badge">Original</span>
+                            <span class="availability-badge">In Stock</span>
+                            <button class="wishlist-btn" data-item="3">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Floral Symphony</h4>
+                            <p class="text-muted">Oil on Canvas • 30" x 40" • 2022</p>
+                            <p>A vibrant floral composition celebrating the beauty of nature in full bloom. Rich textures and harmonious colors create visual music.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$950</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="3">-</button>
+                                    <span class="quantity mx-2" data-item="3">1</span>
+                                    <button class="quantity-btn plus" data-item="3">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="3" data-price="950">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Item 4 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1350" data-date="2023">
+                    <div class="shop-item fade-in">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1588260692965-2c90db1b8c0e?q=80&w=792&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ocean Whispers">
+                            <span class="original-badge">Original</span>
+                            <span class="availability-badge">In Stock</span>
+                            <button class="wishlist-btn" data-item="4">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Ocean Whispers</h4>
+                            <p class="text-muted">Mixed Media • 36" x 48" • 2023</p>
+                            <p>A contemporary exploration of coastal textures combining acrylic, sand, and metallic elements to capture the ocean's essence.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$1,350</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="4">-</button>
+                                    <span class="quantity mx-2" data-item="4">1</span>
+                                    <button class="quantity-btn plus" data-item="4">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="4" data-price="1350">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Item 5 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="print" data-price="75" data-date="2023">
+                    <div class="shop-item fade-in delay-1">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?q=80&w=748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Desert Bloom">
+                            <span class="original-badge print-badge">Limited Print</span>
+                            <div class="sold-out-overlay">
+                                <span>SOLD OUT</span>
+                            </div>
+                            <button class="wishlist-btn" data-item="5">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Desert Bloom</h4>
+                            <p class="text-muted">Watercolor Print • 22" x 28" • Edition of 100</p>
+                            <p>Delicate watercolor study of desert flowers in bloom. This limited edition print captures the subtle colors of arid landscapes.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$75</span>
+                                <button class="btn btn-secondary" disabled>Sold Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Item 6 -->
+                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1100" data-date="2023">
+                    <div class="shop-item fade-in delay-2">
+                        <div class="position-relative">
+                            <img src="https://plus.unsplash.com/premium_photo-1664640458839-000c310875fa?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Urban Dreams">
+                            <span class="original-badge">Original</span>
+                            <span class="availability-badge">In Stock</span>
+                            <button class="wishlist-btn" data-item="6">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="shop-item-content">
+                            <h4>Urban Dreams</h4>
+                            <p class="text-muted">Acrylic on Canvas • 30" x 40" • 2023</p>
+                            <p>An energetic cityscape exploring the rhythm and motion of urban life through geometric abstraction and vibrant color blocks.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="price">$1,100</span>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="6">-</button>
+                                    <span class="quantity mx-2" data-item="6">1</span>
+                                    <button class="quantity-btn plus" data-item="6">+</button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-item="6" data-price="1100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Info -->
+    <section class="section" style="background-color: var(--light-color);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title fade-in">Purchase Information</h2>
+                    <p class="mb-4 fade-in delay-1">Each artwork comes with a certificate of authenticity and is carefully packaged for safe shipping worldwide.</p>
+                    
+                    <div class="artist-info fade-in delay-2">
+                        <h4>Shipping & Handling</h4>
+                        <ul>
+                            <li>Free shipping within the United States</li>
+                            <li>International shipping available with calculated rates</li>
+                            <li>Original paintings ship in custom crates with insurance</li>
+                            <li>Prints ship flat in protective packaging</li>
+                            <li>Processing time: 3-5 business days before shipping</li>
+                            <li>Delivery time: 5-10 business days within the US</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="artist-info fade-in-right">
+                        <h4>Purchase Details</h4>
+                        <ul>
+                            <li>All sales are final on original artwork</li>
+                            <li>Prints may be returned within 14 days in original condition</li>
+                            <li>Payment accepted via credit card, PayPal, or bank transfer</li>
+                            <li>Local pickup available from my studio in New York</li>
+                            <li>Custom framing options available upon request</li>
+                            <li>Certificate of authenticity included with every purchase</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="contact.html" class="btn btn-primary me-3">Questions? Contact Me</a>
+                            <a href="gallery.html" class="btn btn-outline-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary" id="cartSummary">
+        <i class="bi bi-cart3" style="font-size: 1.5rem;"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>Your Cart</h3>
+            <button class="btn-close" id="closeCart"></button>
+        </div>
+        
+        <div id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+            <p class="text-center text-muted">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-total mt-4 pt-4 border-top">
+            <div class="d-flex justify-content-between mb-3">
+                <strong>Subtotal:</strong>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+                <strong>Shipping:</strong>
+                <span id="cartShipping">Free</span>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+                <strong>Total:</strong>
+                <span id="cartTotal" class="price">$0.00</span>
+            </div>
+            <button class="btn btn-primary w-100" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+   <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="mb-4">Artistry Studio</h3>
+                    <p>A professional painting studio dedicated to creating expressive, emotive artworks that transform spaces and inspire emotions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="shop.html">Shop</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Services</h5>
+                    <div class="footer-links">
+                        <a href="contact.html">Original Commissions</a>
+                        <a href="contact.html">Art Consultations</a>
+                        <a href="contact.html">Studio Workshops</a>
+                        <a href="contact.html">Corporate Art</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe for updates on new artworks and exhibitions.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-outline-light" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-5" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2023 Artistry Studio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>Designed with passion for art</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Common JavaScript -->
+    <script src="scripts.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart functionality
+            let cart = JSON.parse(localStorage.getItem('artCart')) || {};
+            let wishlist = JSON.parse(localStorage.getItem('artWishlist')) || [];
+            
+            // Update cart count display
+            function updateCartCount() {
+                let totalItems = 0;
+                for (let item in cart) {
+                    totalItems += cart[item].quantity;
+                }
+                document.querySelector('.cart-count').textContent = totalItems;
+            }
+            
+            // Update wishlist buttons
+            function updateWishlistButtons() {
+                document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                    const itemId = btn.getAttribute('data-item');
+                    const heartIcon = btn.querySelector('i');
+                    
+                    if (wishlist.includes(itemId)) {
+                        btn.classList.add('active');
+                        heartIcon.classList.remove('bi-heart');
+                        heartIcon.classList.add('bi-heart-fill');
+                    } else {
+                        btn.classList.remove('active');
+                        heartIcon.classList.remove('bi-heart-fill');
+                        heartIcon.classList.add('bi-heart');
+                    }
+                });
+            }
+            
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-item');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    const quantity = parseInt(document.querySelector(`.quantity[data-item="${itemId}"]`).textContent);
+                    
+                    if (cart[itemId]) {
+                        cart[itemId].quantity += quantity;
+                    } else {
+                        const itemName = this.closest('.shop-item-content').querySelector('h4').textContent;
+                        const itemImage = this.closest('.shop-item').querySelector('img').src;
+                        const itemBadge = this.closest('.shop-item').querySelector('.original-badge').textContent;
+                        
+                        cart[itemId] = {
+                            name: itemName,
+                            price: price,
+                            quantity: quantity,
+                            image: itemImage,
+                            type: itemBadge
+                        };
+                    }
+                    
+                    localStorage.setItem('artCart', JSON.stringify(cart));
+                    updateCartCount();
+                    showNotification('Item added to cart!');
+                    
+                    // Reset quantity to 1
+                    document.querySelector(`.quantity[data-item="${itemId}"]`).textContent = '1';
+                });
+            });
+            
+            // Quantity controls
+            document.querySelectorAll('.quantity-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-item').replace('minus-', '').replace('plus-', '');
+                    const quantitySpan = document.querySelector(`.quantity[data-item="${itemId}"]`);
+                    let quantity = parseInt(quantitySpan.textContent);
+                    
+                    if (this.classList.contains('plus')) {
+                        quantity++;
+                    } else if (this.classList.contains('minus') && quantity > 1) {
+                        quantity--;
+                    }
+                    
+                    quantitySpan.textContent = quantity;
+                });
+            });
+            
+            // Wishlist functionality
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-item');
+                    const heartIcon = this.querySelector('i');
+                    
+                    if (wishlist.includes(itemId)) {
+                        wishlist = wishlist.filter(id => id !== itemId);
+                        heartIcon.classList.remove('bi-heart-fill');
+                        heartIcon.classList.add('bi-heart');
+                        showNotification('Removed from wishlist');
+                    } else {
+                        wishlist.push(itemId);
+                        heartIcon.classList.remove('bi-heart');
+                        heartIcon.classList.add('bi-heart-fill');
+                        showNotification('Added to wishlist!');
+                    }
+                    
+                    this.classList.toggle('active');
+                    localStorage.setItem('artWishlist', JSON.stringify(wishlist));
+                });
+            });
+            
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    const items = document.querySelectorAll('.shop-item-container');
+                    
+                    items.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'block';
+                        } else if (filter === 'original' && item.getAttribute('data-category') === 'original') {
+                            item.style.display = 'block';
+                        } else if (filter === 'print' && item.getAttribute('data-category') === 'print') {
+                            item.style.display = 'block';
+                        } else if (filter === 'available') {
+                            const soldOut = item.querySelector('.sold-out-overlay');
+                            item.style.display = soldOut ? 'none' : 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Sort functionality
+            document.getElementById('sortSelect').addEventListener('change', function() {
+                const sortBy = this.value;
+                const container = document.getElementById('shopItems');
+                const items = Array.from(container.querySelectorAll('.shop-item-container'));
+                
+                items.sort((a, b) => {
+                    const priceA = parseFloat(a.getAttribute('data-price'));
+                    const priceB = parseFloat(b.getAttribute('data-price'));
+                    const dateA = parseInt(a.getAttribute('data-date'));
+                    const dateB = parseInt(b.getAttribute('data-date'));
+                    
+                    if (sortBy === 'price-low') {
+                        return priceA - priceB;
+                    } else if (sortBy === 'price-high') {
+                        return priceB - priceA;
+                    } else if (sortBy === 'newest') {
+                        return dateB - dateA;
+                    } else {
+                        return 0;
+                    }
+                });
+                
+                items.forEach(item => container.appendChild(item));
+                
+                // Add fade-in animation to reordered items
+                items.forEach((item, index) => {
+                    item.style.animationDelay = `${index * 0.1}s`;
+                    item.classList.add('fade-in');
+                });
+            });
+            
+            // Cart modal functionality
+            document.getElementById('cartSummary').addEventListener('click', function() {
+                showCartModal();
+            });
+            
+            document.getElementById('cartOverlay').addEventListener('click', function() {
+                hideCartModal();
+            });
+            
+            document.getElementById('closeCart').addEventListener('click', function() {
+                hideCartModal();
+            });
+            
+            function showCartModal() {
+                updateCartModal();
+                document.getElementById('cartModal').style.display = 'block';
+                document.getElementById('cartOverlay').style.display = 'block';
+            }
+            
+            function hideCartModal() {
+                document.getElementById('cartModal').style.display = 'none';
+                document.getElementById('cartOverlay').style.display = 'none';
+            }
+            
+            function updateCartModal() {
+                const cartItemsContainer = document.getElementById('cartItems');
+                let subtotal = 0;
+                
+                if (Object.keys(cart).length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-center text-muted">Your cart is empty</p>';
+                } else {
+                    cartItemsContainer.innerHTML = '';
+                    
+                    for (let itemId in cart) {
+                        const item = cart[itemId];
+                        const itemTotal = item.price * item.quantity;
+                        subtotal += itemTotal;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div style="flex: 1;">
+                                <strong>${item.name}</strong>
+                                <div class="text-muted small">${item.type}</div>
+                                <div class="d-flex align-items-center mt-2">
+                                    <button class="btn btn-sm btn-outline-secondary cart-minus" data-id="${itemId}">-</button>
+                                    <span class="mx-2">${item.quantity}</span>
+                                    <button class="btn btn-sm btn-outline-secondary cart-plus" data-id="${itemId}">+</button>
+                                    <button class="btn btn-sm btn-link text-danger cart-remove ms-2" data-id="${itemId}">Remove</button>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold">$${(itemTotal).toFixed(2)}</div>
+                                <div class="text-muted small">$${item.price} each</div>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(cartItem);
+                    }
+                    
+                    // Add event listeners to cart item buttons
+                    document.querySelectorAll('.cart-minus').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            if (cart[id].quantity > 1) {
+                                cart[id].quantity--;
+                            } else {
+                                delete cart[id];
+                            }
+                            localStorage.setItem('artCart', JSON.stringify(cart));
+                            updateCartCount();
+                            updateCartModal();
+                        });
+                    });
+                    
+                    document.querySelectorAll('.cart-plus').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            cart[id].quantity++;
+                            localStorage.setItem('artCart', JSON.stringify(cart));
+                            updateCartCount();
+                            updateCartModal();
+                        });
+                    });
+                    
+                    document.querySelectorAll('.cart-remove').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            delete cart[id];
+                            localStorage.setItem('artCart', JSON.stringify(cart));
+                            updateCartCount();
+                            updateCartModal();
+                            showNotification('Item removed from cart');
+                        });
+                    });
+                }
+                
+                document.getElementById('cartSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+                document.getElementById('cartTotal').textContent = `$${subtotal.toFixed(2)}`;
+            }
+            
+            // Checkout button
+            document.getElementById('checkoutBtn').addEventListener('click', function() {
+                if (Object.keys(cart).length === 0) {
+                    showNotification('Your cart is empty!');
+                } else {
+                    showNotification('Proceeding to checkout...');
+                    setTimeout(() => {
+                        alert('Thank you for your purchase! In a real application, this would redirect to a secure checkout page.');
+                        
+                        // Clear cart after checkout
+                        cart = {};
+                        localStorage.setItem('artCart', JSON.stringify(cart));
+                        updateCartCount();
+                        updateCartModal();
+                        hideCartModal();
+                    }, 500);
+                }
+            });
+            
+            // Notification function
+            function showNotification(message) {
+                // Remove existing notification
+                const existingNotification = document.querySelector('.notification');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+                
+                // Create notification
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.innerHTML = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: var(--primary-color);
+                    color: white;
+                    padding: 0.875rem 1.25rem; /* Reduced padding */
+                    border-radius: 8px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 9999;
+                    animation: slideIn 0.3s ease;
+                    font-weight: 500;
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+            
+            // Add CSS animations if not already present
+            if (!document.querySelector('#animations')) {
+                const style = document.createElement('style');
+                style.id = 'animations';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Initialize
+            updateCartCount();
+            updateWishlistButtons();
+            
+            // Add data attributes to quantity buttons for proper targeting
+            document.querySelectorAll('.quantity-btn').forEach((btn, index) => {
+                const itemId = Math.floor(index/2) + 1;
+                if (btn.classList.contains('minus')) {
+                    btn.setAttribute('data-item', `minus-${itemId}`);
+                } else {
+                    btn.setAttribute('data-item', `plus-${itemId}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
