@@ -56,7 +56,7 @@
     </section>
 
      <!-- Shop Filters -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <div class="shop-filters">
             <div class="row align-items-center">
                 <div class="col-lg-8 mb-3 mb-lg-0">
@@ -81,11 +81,35 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Shop Content -->
-    <section class="compact-section">
+    <section class="compact-section" style="background-color: var(--light-color);">
         <div class="container">
+            <div class="shop-filters">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                    <div class="filter-group">
+                        <strong class="me-3">Filter by:</strong>
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All Items</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="original">Originals</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="print">Prints</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="available">Available</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sort-dropdown ms-lg-auto">
+                        <strong class="me-2">Sort by:</strong>
+                        <select class="form-select d-inline-block w-auto" id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
             <div class="row" id="shopItems">
                 <!-- Shop Item 1 -->
                 <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1200" data-date="2023">
@@ -249,6 +273,186 @@
                                 <button class="btn btn-primary add-to-cart" data-item="6" data-price="1100">Add to Cart</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Updated Exhibitions Section - Only Upcoming with Images -->
+    <section class="section"  >
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center">Upcoming Exhibitions</h2>
+                    <p class="lead">Join me at these exciting upcoming shows and events</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Exhibition 1 - Updated -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card exhibition-card fade-in">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1632127257185-5d1261e46d93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top exhibition-img" alt="Urban Rhythms Exhibition">
+                            <div class="exhibition-badge">UPCOMING</div>
+                        </div>
+                        <div class="exhibition-info">
+                            <div class="exhibition-date">
+                                <i class="bi bi-calendar-event date-icon"></i>
+                                <span>March 15 - April 30, 2024</span>
+                            </div>
+                            <h4 class="exhibition-title">"Urban Rhythms: A City's Pulse"</h4>
+                            <span class="exhibition-type">Solo Exhibition</span>
+
+                            <!-- Special event as permanent element -->
+                            <div class="special-event">
+                                <i class="bi bi-people-fill"></i>
+                                <strong>Opening Reception:</strong> March 15, 6-9 PM
+                            </div>
+
+                            <p class="mt-3">Exploring the dynamic energy of metropolitan life through bold colors and
+                                geometric abstraction. This exhibition features 30 new works created specifically for
+                                this show.</p>
+
+                            <div class="venue-info">
+                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
+                                <p class="mb-1"><strong>Metropolitan Art Gallery</strong></p>
+                                <p class="mb-1">123 Art Avenue, New York, NY 10001</p>
+                                <p class="mb-0"><small>Gallery Hours: Tue-Sun, 10AM-6PM</small></p>
+                            </div>
+
+                            <div class="countdown">
+                                <div class="countdown-item">
+                                    <div class="countdown-number">45</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">12</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">30</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exhibition 2 - Updated -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card exhibition-card fade-in delay-1">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                class="card-img-top exhibition-img" alt="Coastal Impressions Exhibition">
+                            <div class="exhibition-badge">UPCOMING</div>
+                        </div>
+                        <div class="exhibition-info">
+                            <div class="exhibition-date">
+                                <i class="bi bi-calendar-event date-icon"></i>
+                                <span>June 1 - July 15, 2024</span>
+                            </div>
+                            <h4 class="exhibition-title">"Coastal Impressions"</h4>
+                            <span class="exhibition-type">Group Exhibition</span>
+
+                            <!-- Special event as permanent element -->
+                            <div class="special-event">
+                                <i class="bi bi-mic-fill"></i>
+                                <strong>Artist Talk:</strong> June 8, 2:00 PM
+                            </div>
+
+                            <p class="mt-3">Featured alongside five contemporary artists exploring coastal landscapes
+                                and environmental themes through various media. A portion of proceeds benefits ocean
+                                conservation.</p>
+
+                            <div class="venue-info">
+                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
+                                <p class="mb-1"><strong>Oceanfront Gallery</strong></p>
+                                <p class="mb-1">456 Beach Boulevard, Santa Monica, CA 90401</p>
+                                <p class="mb-0"><small>Gallery Hours: Daily, 11AM-7PM</small></p>
+                            </div>
+
+                            <div class="countdown">
+                                <div class="countdown-item">
+                                    <div class="countdown-number">122</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">06</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">45</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exhibition 3 - Updated -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card exhibition-card fade-in delay-2">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1563293743-a9761195b52e?q=80&w=1139&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top exhibition-img" alt="International Art Fair">
+                            <div class="exhibition-badge">UPCOMING</div>
+                        </div>
+                        <div class="exhibition-info">
+                            <div class="exhibition-date">
+                                <i class="bi bi-calendar-event date-icon"></i>
+                                <span>September 10-15, 2024</span>
+                            </div>
+                            <h4 class="exhibition-title">International Art Fair 2024</h4>
+                            <span class="exhibition-type">Art Fair Booth</span>
+
+                            <!-- Special event as permanent element -->
+                            <div class="special-event">
+                                <i class="bi bi-star-fill"></i>
+                                <strong>VIP Preview:</strong> September 9, 5-8 PM
+                            </div>
+
+                            <p class="mt-3">Presenting select works at the prestigious International Art Fair, featuring
+                                gallery representation and new limited edition prints. Special catalog available at the
+                                booth.</p>
+
+                            <div class="venue-info">
+                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
+                                <p class="mb-1"><strong>Miami Convention Center</strong></p>
+                                <p class="mb-1">1901 Convention Center Dr, Miami, FL 33132</p>
+                                <p class="mb-0"><small>Fair Hours: 10AM-8PM Daily</small></p>
+                            </div>
+
+                            <div class="countdown">
+                                <div class="countdown-item">
+                                    <div class="countdown-number">214</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">08</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-number">15</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-12 text-center fade-in">
+                    <div class="alert alert-info" role="alert">
+                        <h5 class="alert-heading mb-3"><i class="bi bi-bell me-2"></i> Stay Updated!</h5>
+                        <p class="mb-0">Want to be notified about exhibition openings and special events? <a
+                                href="contact.html" class="alert-link">Join my mailing list</a> for exclusive
+                            invitations and updates.</p>
                     </div>
                 </div>
             </div>
