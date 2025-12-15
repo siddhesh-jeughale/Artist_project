@@ -4,477 +4,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Artistry Studio</title>
+    <title>Shop Art | Artistry Studio</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 1. Cinematic Header */
+        .page-header {
+            background: linear-gradient(rgba(34, 34, 59, 0.5), rgba(34, 34, 59, 0.5)), url('https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: -76px;
+            padding-top: 76px;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Artistry Studio</a>
+             <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="" class="img-fluid" width="200px">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="page-header">
+    <header class="page-header fade-in">
         <div class="container">
-            <h1 class="fade-in">Art Shop</h1>
-            <p class="fade-in delay-1">Original paintings and limited edition prints available for purchase</p>
+            <h1 class="display-3 fw-bold text-white mb-3">Collect Art</h1>
+            <p class="lead text-white-50 fs-4">Original paintings and limited edition fine art prints</p>
         </div>
-    </section>
-
-    <section class="compact-section" style="background-color: var(--light-color);">
-        <div class="container">
-            <div class="shop-filters">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 mb-3 mb-lg-0">
-                        <div class="filter-group">
-                            <strong class="me-3">Filter by:</strong>
-                            <button class="btn btn-outline-primary filter-btn active" data-filter="all">All
-                                Items</button>
-                            <button class="btn btn-outline-primary filter-btn" data-filter="original">Originals</button>
-                            <button class="btn btn-outline-primary filter-btn" data-filter="print">Prints</button>
-                            <button class="btn btn-outline-primary filter-btn"
-                                data-filter="available">Available</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="sort-dropdown ms-lg-auto">
-                            <strong class="me-2">Sort by:</strong>
-                            <select class="form-select d-inline-block w-auto" id="sortSelect">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="newest">Newest First</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="shopItems">
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1200"
-                    data-date="2023">
-                    <div class="shop-item fade-in">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="Abstract Harmony">
-                            <span class="original-badge">Original</span>
-                            <span class="availability-badge">In Stock</span>
-                            <button class="wishlist-btn" data-item="1">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Abstract Harmony</h4>
-                            <p class="text-muted">Oil on Canvas • 36" x 48" • 2023</p>
-                            <p>A vibrant abstract piece that explores color relationships and emotional expression
-                                through bold brushwork and layered textures.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;1,200</span>
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-item="1">-</button>
-                                    <span class="quantity mx-2" data-item="1">1</span>
-                                    <button class="quantity-btn plus" data-item="1">+</button>
-                                </div>
-                                <button class="btn btn-primary add-to-cart" data-item="1" data-price="1200">Add to
-                                    Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="print" data-price="85"
-                    data-date="2023">
-                    <div class="shop-item fade-in delay-1">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="Mountain Serenity">
-                            <span class="original-badge print-badge">Limited Print</span>
-                            <span class="availability-badge">In Stock</span>
-                            <button class="wishlist-btn" data-item="2">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Mountain Serenity</h4>
-                            <p class="text-muted">Watercolor Print • 24" x 30" • Edition of 50</p>
-                            <p>A serene mountain landscape capturing the peace of nature in delicate watercolor. Printed
-                                on archival paper with fade-resistant inks.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;85</span>
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-item="2">-</button>
-                                    <span class="quantity mx-2" data-item="2">1</span>
-                                    <button class="quantity-btn plus" data-item="2">+</button>
-                                </div>
-                                <button class="btn btn-primary add-to-cart" data-item="2" data-price="85">Add to
-                                    Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="950"
-                    data-date="2022">
-                    <div class="shop-item fade-in delay-2">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                                alt="Floral Symphony">
-                            <span class="original-badge">Original</span>
-                            <span class="availability-badge">In Stock</span>
-                            <button class="wishlist-btn" data-item="3">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Floral Symphony</h4>
-                            <p class="text-muted">Oil on Canvas • 30" x 40" • 2022</p>
-                            <p>A vibrant floral composition celebrating the beauty of nature in full bloom. Rich
-                                textures and harmonious colors create visual music.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;950</span>
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-item="3">-</button>
-                                    <span class="quantity mx-2" data-item="3">1</span>
-                                    <button class="quantity-btn plus" data-item="3">+</button>
-                                </div>
-                                <button class="btn btn-primary add-to-cart" data-item="3" data-price="950">Add to
-                                    Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1350"
-                    data-date="2023">
-                    <div class="shop-item fade-in">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1588260692965-2c90db1b8c0e?q=80&w=792&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Ocean Whispers">
-                            <span class="original-badge">Original</span>
-                            <span class="availability-badge">In Stock</span>
-                            <button class="wishlist-btn" data-item="4">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Ocean Whispers</h4>
-                            <p class="text-muted">Mixed Media • 36" x 48" • 2023</p>
-                            <p>A contemporary exploration of coastal textures combining acrylic, sand, and metallic
-                                elements to capture the ocean's essence.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;1,350</span>
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-item="4">-</button>
-                                    <span class="quantity mx-2" data-item="4">1</span>
-                                    <button class="quantity-btn plus" data-item="4">+</button>
-                                </div>
-                                <button class="btn btn-primary add-to-cart" data-item="4" data-price="1350">Add to
-                                    Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="print" data-price="75"
-                    data-date="2023">
-                    <div class="shop-item fade-in delay-1">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?q=80&w=748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Desert Bloom">
-                            <span class="original-badge print-badge">Limited Print</span>
-                            <div class="sold-out-overlay">
-                                <span>SOLD OUT</span>
-                            </div>
-                            <button class="wishlist-btn" data-item="5">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Desert Bloom</h4>
-                            <p class="text-muted">Watercolor Print • 22" x 28" • Edition of 100</p>
-                            <p>Delicate watercolor study of desert flowers in bloom. This limited edition print captures
-                                the subtle colors of arid landscapes.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;75</span>
-                                <button class="btn btn-secondary" disabled>Sold Out</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 shop-item-container" data-category="original" data-price="1100"
-                    data-date="2023">
-                    <div class="shop-item fade-in delay-2">
-                        <div class="position-relative">
-                            <img src="https://plus.unsplash.com/premium_photo-1664640458839-000c310875fa?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Urban Dreams">
-                            <span class="original-badge">Original</span>
-                            <span class="availability-badge">In Stock</span>
-                            <button class="wishlist-btn" data-item="6">
-                                <i class="bi bi-heart"></i>
-                            </button>
-                        </div>
-                        <div class="shop-item-content">
-                            <h4>Urban Dreams</h4>
-                            <p class="text-muted">Acrylic on Canvas • 30" x 40" • 2023</p>
-                            <p>An energetic cityscape exploring the rhythm and motion of urban life through geometric
-                                abstraction and vibrant color blocks.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="price">&#8377;1,100</span>
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-item="6">-</button>
-                                    <span class="quantity mx-2" data-item="6">1</span>
-                                    <button class="quantity-btn plus" data-item="6">+</button>
-                                </div>
-                                <button class="btn btn-primary add-to-cart" data-item="6" data-price="1100">Add to
-                                    Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </header>
 
     <section class="section">
         <div class="container">
+            
+            <div class="row mb-5 align-items-center fade-in delay-1">
+                <div class="col-lg-8">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="original">Originals</button>
+                        <button class="filter-btn" data-filter="print">Prints</button>
+                        <button class="filter-btn" data-filter="available">In Stock</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <select class="form-select d-inline-block w-auto" id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4" id="shopItems">
+                
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="original" data-price="1200" data-date="2023">
+                    <div class="art-card shop-item fade-in">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Original</span>
+                            <button class="wishlist-btn" data-item="1"><i class="bi bi-heart"></i></button>
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=500&q=80" alt="Abstract Harmony">
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0">Abstract Harmony</h4>
+                                <span class="fw-bold text-dark">₹1,200</span>
+                            </div>
+                            <p class="text-muted small mb-3">Oil on Canvas • 36" x 48"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="1"><i class="bi bi-dash"></i></button>
+                                    <span class="quantity mx-2 small fw-bold" data-item="1">1</span>
+                                    <button class="quantity-btn plus" data-item="1"><i class="bi bi-plus"></i></button>
+                                </div>
+                                <button class="btn btn-sm btn-primary rounded-pill px-4 add-to-cart" data-item="1" data-price="1200">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="print" data-price="85" data-date="2023">
+                    <div class="art-card shop-item fade-in delay-1">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge" style="background: var(--secondary-color); color: white;">Print</span>
+                            <button class="wishlist-btn" data-item="2"><i class="bi bi-heart"></i></button>
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=500&q=80" alt="Mountain Serenity">
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0">Mountain Serenity</h4>
+                                <span class="fw-bold text-dark">₹85</span>
+                            </div>
+                            <p class="text-muted small mb-3">Fine Art Print • 24" x 30"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="2"><i class="bi bi-dash"></i></button>
+                                    <span class="quantity mx-2 small fw-bold" data-item="2">1</span>
+                                    <button class="quantity-btn plus" data-item="2"><i class="bi bi-plus"></i></button>
+                                </div>
+                                <button class="btn btn-sm btn-primary rounded-pill px-4 add-to-cart" data-item="2" data-price="85">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="original" data-price="950" data-date="2022">
+                    <div class="art-card shop-item fade-in delay-2">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Original</span>
+                            <button class="wishlist-btn" data-item="3"><i class="bi bi-heart"></i></button>
+                            <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=500&q=80" alt="Floral Symphony">
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0">Floral Symphony</h4>
+                                <span class="fw-bold text-dark">₹950</span>
+                            </div>
+                            <p class="text-muted small mb-3">Oil on Canvas • 30" x 40"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="3"><i class="bi bi-dash"></i></button>
+                                    <span class="quantity mx-2 small fw-bold" data-item="3">1</span>
+                                    <button class="quantity-btn plus" data-item="3"><i class="bi bi-plus"></i></button>
+                                </div>
+                                <button class="btn btn-sm btn-primary rounded-pill px-4 add-to-cart" data-item="3" data-price="950">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="original" data-price="1350" data-date="2023">
+                    <div class="art-card shop-item fade-in">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Original</span>
+                            <button class="wishlist-btn" data-item="4"><i class="bi bi-heart"></i></button>
+                            <img src="https://images.unsplash.com/photo-1588260692965-2c90db1b8c0e?q=80&w=792&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ocean Whispers">
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0">Ocean Whispers</h4>
+                                <span class="fw-bold text-dark">₹1,350</span>
+                            </div>
+                            <p class="text-muted small mb-3">Mixed Media • 36" x 48"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="4"><i class="bi bi-dash"></i></button>
+                                    <span class="quantity mx-2 small fw-bold" data-item="4">1</span>
+                                    <button class="quantity-btn plus" data-item="4"><i class="bi bi-plus"></i></button>
+                                </div>
+                                <button class="btn btn-sm btn-primary rounded-pill px-4 add-to-cart" data-item="4" data-price="1350">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="print" data-price="75" data-date="2023">
+                    <div class="art-card shop-item fade-in delay-1">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge" style="background: var(--secondary-color); color: white;">Print</span>
+                            <button class="wishlist-btn" data-item="5"><i class="bi bi-heart"></i></button>
+                            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?q=80&w=748&auto=format&fit=crop" alt="Desert Bloom">
+                            <div class="sold-out-overlay">
+                                <span class="sold-out-text">Sold Out</span>
+                            </div>
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0 text-muted">Desert Bloom</h4>
+                                <span class="fw-bold text-muted">₹75</span>
+                            </div>
+                            <p class="text-muted small mb-3">Fine Art Print • 22" x 28"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted small fst-italic">Currently unavailable</span>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill px-4" disabled>View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 shop-item-container" data-category="original" data-price="1100" data-date="2023">
+                    <div class="art-card shop-item fade-in delay-2">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Original</span>
+                            <button class="wishlist-btn" data-item="6"><i class="bi bi-heart"></i></button>
+                            <img src="https://plus.unsplash.com/premium_photo-1664640458839-000c310875fa?q=80&w=687&auto=format&fit=crop" alt="Urban Dreams">
+                        </div>
+                        <div class="art-overlay-info">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h4 class="mb-0">Urban Dreams</h4>
+                                <span class="fw-bold text-dark">₹1,100</span>
+                            </div>
+                            <p class="text-muted small mb-3">Acrylic on Canvas • 30" x 40"</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-item="6"><i class="bi bi-dash"></i></button>
+                                    <span class="quantity mx-2 small fw-bold" data-item="6">1</span>
+                                    <button class="quantity-btn plus" data-item="6"><i class="bi bi-plus"></i></button>
+                                </div>
+                                <button class="btn btn-sm btn-primary rounded-pill px-4 add-to-cart" data-item="6" data-price="1100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light-color">
+        <div class="container">
             <div class="row mb-5">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center fade-in">
                     <h2 class="section-title text-center">Upcoming Exhibitions</h2>
-                    <p class="lead">Join me at these exciting upcoming shows and events</p>
+                    <p class="lead">See the art in person before you buy</p>
                 </div>
             </div>
 
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card exhibition-card fade-in">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1632127257185-5d1261e46d93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-top exhibition-img" alt="Urban Rhythms Exhibition">
-                            <div class="exhibition-badge">UPCOMING</div>
+                <div class="col-lg-4 col-md-6 fade-in delay-1">
+                    <div class="art-card exhibition-card h-100">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge" style="background: #28a745; color: white;">March 2024</span>
+                            <img src="https://images.unsplash.com/photo-1632127257185-5d1261e46d93?q=80&w=1170&auto=format&fit=crop" alt="Exhibition 1">
                         </div>
-                        <div class="exhibition-info">
-                            <div class="exhibition-date">
-                                <i class="bi bi-calendar-event date-icon"></i>
-                                <span>March 15 - April 30, 2024</span>
-                            </div>
-                            <h4 class="exhibition-title">"Urban Rhythms: A City's Pulse"</h4>
-                            <span class="exhibition-type">Solo Exhibition</span>
-
-                            <div class="special-event">
-                                <i class="bi bi-people-fill"></i>
-                                <strong>Opening Reception:</strong> March 15, 6-9 PM
-                            </div>
-
-                            <p class="mt-3">Exploring the dynamic energy of metropolitan life through bold colors and
-                                geometric abstraction. This exhibition features 30 new works created specifically for
-                                this show.</p>
-
-                            <div class="venue-info">
-                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
-                                <p class="mb-1"><strong>Metropolitan Art Gallery</strong></p>
-                                <p class="mb-1">123 Art Avenue, New York, NY 10001</p>
-                                <p class="mb-0"><small>Gallery Hours: Tue-Sun, 10AM-6PM</small></p>
-                            </div>
-
-                            <div class="countdown">
-                                <div class="countdown-item">
-                                    <div class="countdown-number">45</div>
-                                    <div class="countdown-label">Days</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">12</div>
-                                    <div class="countdown-label">Hours</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">30</div>
-                                    <div class="countdown-label">Minutes</div>
-                                </div>
+                        <div class="art-overlay-info">
+                            <h4 class="mb-2">"Urban Rhythms"</h4>
+                            <p class="text-primary fw-bold mb-1">Solo Exhibition</p>
+                            <p class="text-muted small"><i class="bi bi-geo-alt-fill me-1"></i> Metropolitan Art Gallery, NYC</p>
+                            
+                            <div class="countdown-box">
+                                <div><span class="count-num">45</span><span class="count-label">Days</span></div>
+                                <div><span class="count-num">12</span><span class="count-label">Hours</span></div>
+                                <div><span class="count-num">30</span><span class="count-label">Mins</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card exhibition-card fade-in delay-1">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                class="card-img-top exhibition-img" alt="Coastal Impressions Exhibition">
-                            <div class="exhibition-badge">UPCOMING</div>
+                <div class="col-lg-4 col-md-6 fade-in delay-2">
+                    <div class="art-card exhibition-card h-100">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge" style="background: #28a745; color: white;">June 2024</span>
+                            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Exhibition 2">
                         </div>
-                        <div class="exhibition-info">
-                            <div class="exhibition-date">
-                                <i class="bi bi-calendar-event date-icon"></i>
-                                <span>June 1 - July 15, 2024</span>
-                            </div>
-                            <h4 class="exhibition-title">"Coastal Impressions"</h4>
-                            <span class="exhibition-type">Group Exhibition</span>
-
-                            <div class="special-event">
-                                <i class="bi bi-mic-fill"></i>
-                                <strong>Artist Talk:</strong> June 8, 2:00 PM
-                            </div>
-
-                            <p class="mt-3">Featured alongside five contemporary artists exploring coastal landscapes
-                                and environmental themes through various media. A portion of proceeds benefits ocean
-                                conservation.</p>
-
-                            <div class="venue-info">
-                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
-                                <p class="mb-1"><strong>Oceanfront Gallery</strong></p>
-                                <p class="mb-1">456 Beach Boulevard, Santa Monica, CA 90401</p>
-                                <p class="mb-0"><small>Gallery Hours: Daily, 11AM-7PM</small></p>
-                            </div>
-
-                            <div class="countdown">
-                                <div class="countdown-item">
-                                    <div class="countdown-number">122</div>
-                                    <div class="countdown-label">Days</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">06</div>
-                                    <div class="countdown-label">Hours</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">45</div>
-                                    <div class="countdown-label">Minutes</div>
-                                </div>
+                        <div class="art-overlay-info">
+                            <h4 class="mb-2">"Coastal Impressions"</h4>
+                            <p class="text-primary fw-bold mb-1">Group Show</p>
+                            <p class="text-muted small"><i class="bi bi-geo-alt-fill me-1"></i> Oceanfront Gallery, Santa Monica</p>
+                            
+                            <div class="countdown-box">
+                                <div><span class="count-num">122</span><span class="count-label">Days</span></div>
+                                <div><span class="count-num">06</span><span class="count-label">Hours</span></div>
+                                <div><span class="count-num">45</span><span class="count-label">Mins</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card exhibition-card fade-in delay-2">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1563293743-a9761195b52e?q=80&w=1139&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-top exhibition-img" alt="International Art Fair">
-                            <div class="exhibition-badge">UPCOMING</div>
+                <div class="col-lg-4 col-md-6 fade-in delay-3">
+                    <div class="art-card exhibition-card h-100">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge" style="background: #28a745; color: white;">Sept 2024</span>
+                            <img src="https://images.unsplash.com/photo-1563293743-a9761195b52e?q=80&w=1139&auto=format&fit=crop" alt="Exhibition 3">
                         </div>
-                        <div class="exhibition-info">
-                            <div class="exhibition-date">
-                                <i class="bi bi-calendar-event date-icon"></i>
-                                <span>September 10-15, 2024</span>
-                            </div>
-                            <h4 class="exhibition-title">International Art Fair 2024</h4>
-                            <span class="exhibition-type">Art Fair Booth</span>
-
-                            <div class="special-event">
-                                <i class="bi bi-star-fill"></i>
-                                <strong>VIP Preview:</strong> September 9, 5-8 PM
-                            </div>
-
-                            <p class="mt-3">Presenting select works at the prestigious International Art Fair, featuring
-                                gallery representation and new limited edition prints. Special catalog available at the
-                                booth.</p>
-
-                            <div class="venue-info">
-                                <h6><i class="bi bi-geo-alt me-2"></i> Venue Details</h6>
-                                <p class="mb-1"><strong>Miami Convention Center</strong></p>
-                                <p class="mb-1">1901 Convention Center Dr, Miami, FL 33132</p>
-                                <p class="mb-0"><small>Fair Hours: 10AM-8PM Daily</small></p>
-                            </div>
-
-                            <div class="countdown">
-                                <div class="countdown-item">
-                                    <div class="countdown-number">214</div>
-                                    <div class="countdown-label">Days</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">08</div>
-                                    <div class="countdown-label">Hours</div>
-                                </div>
-                                <div class="countdown-item">
-                                    <div class="countdown-number">15</div>
-                                    <div class="countdown-label">Minutes</div>
-                                </div>
+                        <div class="art-overlay-info">
+                            <h4 class="mb-2">International Art Fair</h4>
+                            <p class="text-primary fw-bold mb-1">Booth B-45</p>
+                            <p class="text-muted small"><i class="bi bi-geo-alt-fill me-1"></i> Miami Convention Center</p>
+                            
+                            <div class="countdown-box">
+                                <div><span class="count-num">214</span><span class="count-label">Days</span></div>
+                                <div><span class="count-num">08</span><span class="count-label">Hours</span></div>
+                                <div><span class="count-num">15</span><span class="count-label">Mins</span></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12 text-center fade-in">
-                    <div class="alert alert-info" role="alert">
-                        <h5 class="alert-heading mb-3"><i class="bi bi-bell me-2"></i> Stay Updated!</h5>
-                        <p class="mb-0">Want to be notified about exhibition openings and special events? <a
-                                href="contact.html" class="alert-link">Join my mailing list</a> for exclusive
-                            invitations and updates.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background-color: var(--light-color);">
+    <section class="section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title fade-in">Purchase Information</h2>
-                    <p class="mb-4 fade-in delay-1">Each artwork comes with a certificate of authenticity and is
-                        carefully packaged for safe shipping worldwide.</p>
-
-                    <div class="artist-info fade-in delay-2">
-                        <h4>Shipping & Handling</h4>
-                        <ul>
-                            <li>Free shipping within the United States</li>
-                            <li>International shipping available with calculated rates</li>
-                            <li>Original paintings ship in custom crates with insurance</li>
-                            <li>Prints ship flat in protective packaging</li>
-                            <li>Processing time: 3-5 business days before shipping</li>
-                            <li>Delivery time: 5-10 business days within the US</li>
-                        </ul>
-                    </div>
+                <div class="col-lg-6 mb-5 mb-lg-0 fade-in-left">
+                    <h2 class="section-title">Safe & Secure Shipping</h2>
+                    <p class="lead mb-4">Artworks are handled with the utmost care.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Free shipping within the United States</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Custom crating for original canvases</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Certificate of Authenticity included</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 14-day return policy for prints</li>
+                    </ul>
                 </div>
-
-                <div class="col-lg-6">
-                    <div class="artist-info fade-in-right">
-                        <h4>Purchase Details</h4>
-                        <ul>
-                            <li>All sales are final on original artwork</li>
-                            <li>Prints may be returned within 14 days in original condition</li>
-                            <li>Payment accepted via credit card, PayPal, or bank transfer</li>
-                            <li>Local pickup available from my studio in New York</li>
-                            <li>Custom framing options available upon request</li>
-                            <li>Certificate of authenticity included with every purchase</li>
-                        </ul>
-                        <div class="mt-4">
-                            <a href="contact.html" class="btn btn-primary me-3">Questions? Contact Me</a>
-                            <a href="gallery.html" class="btn btn-outline-primary">View Gallery</a>
-                        </div>
+                <div class="col-lg-6 fade-in-right">
+                    <div class="p-5 bg-light rounded-3 shadow-sm text-center">
+                        <i class="bi bi-shield-check display-1 text-primary mb-3"></i>
+                        <h4>Guarantee of Quality</h4>
+                        <p class="text-muted mb-4">Every piece is an original creation or a high-fidelity archival print, inspected personally by the artist before shipping.</p>
+                        <a href="contact.html" class="btn btn-outline-dark rounded-pill">Questions? Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -482,125 +341,101 @@
     </section>
 
     <div class="cart-summary" id="cartSummary">
-        <i class="bi bi-cart3" style="font-size: 1.5rem;"></i>
+        <i class="bi bi-bag-fill fs-5"></i>
         <span class="cart-count">0</span>
     </div>
 
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-modal" id="cartModal">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3>Your Cart</h3>
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+            <h4 class="mb-0 font-playfair">Your Cart</h4>
             <button class="btn-close" id="closeCart"></button>
         </div>
 
-        <div id="cartItems">
-            <p class="text-center text-muted">Your cart is empty</p>
+        <div id="cartItems" class="mb-4">
+            <p class="text-center text-muted py-4">Your cart is currently empty.</p>
         </div>
 
-        <div class="cart-total mt-4 pt-4 border-top">
-            <div class="d-flex justify-content-between mb-3">
-                <strong>Subtotal:</strong>
-                <span id="cartSubtotal">&#8377;0.00</span>
+        <div class="cart-total pt-3 border-top">
+            <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Subtotal:</span>
+                <span id="cartSubtotal" class="fw-bold">₹0.00</span>
             </div>
             <div class="d-flex justify-content-between mb-4">
-                <strong>Shipping:</strong>
-                <span id="cartShipping">Free</span>
+                <span class="text-muted">Shipping:</span>
+                <span class="text-success">Free</span>
             </div>
-            <div class="d-flex justify-content-between mb-4">
-                <strong>Total:</strong>
-                <span id="cartTotal" class="price">&#8377;0.00</span>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="mb-0">Total</h5>
+                <h4 class="mb-0 text-primary" id="cartTotal">₹0.00</h4>
             </div>
-            <button class="btn btn-primary w-100" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-primary w-100 rounded-pill py-2" id="checkoutBtn">Proceed to Checkout</button>
         </div>
     </div>
 
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="mb-4">Artistry Studio</h3>
-                    <p class="text-white-75">A professional painting studio dedicated to creating expressive, emotive
-                        artworks that transform spaces and inspire emotions.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                <div class="col-lg-4 mb-4">
+                    <h3>Artistry Studio</h3>
+                    <p>Creating expressive, emotive artworks that transform spaces. Based in Chicago, shipping worldwide.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-
-                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="mb-4">Quick Links</h5>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h5>Explore</h5>
                     <div class="footer-links">
                         <a href="index.html">Home</a>
-                        <a class="text-accent" href="about.html">About</a>
                         <a href="gallery.html">Gallery</a>
                         <a href="shop.html">Shop</a>
-                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="mb-4">Services</h5>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h5>Services</h5>
                     <div class="footer-links">
-                        <a href="contact.html">Original Commissions</a>
-                        <a href="contact.html">Art Consultations</a>
-                        <a href="contact.html">Studio Workshops</a>
-                        <a href="contact.html">Corporate Art</a>
+                        <a href="contact.html">Commissions</a>
+                        <a href="contact.html">Workshops</a>
+                        <a href="contact.html">Consultations</a>
                     </div>
                 </div>
-
-                <div class="col-lg-3">
-                    <h5 class="mb-4">Get in Touch</h5>
-                    <p class="text-white-75 mb-3">Ready to commission a custom piece or inquire about pricing?</p>
-                    <div class="mb-3">
-                        <a href="contact.html" class="btn btn-primary w-100 mb-2">Start a Commission</a>
-                        <p class="text-white-50 mt-3 mb-1"><i class="bi bi-envelope-fill me-2"
-                                style="color: var(--accent-color);"></i>alex@artistrystudio.com</p>
-                        <p class="text-white-50"><i class="bi bi-geo-alt-fill me-2"
-                                style="color: var(--accent-color);"></i>Studio, Chicago IL</p>
-                    </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Get in Touch</h5>
+                    <p>Ready to start a project?</p>
+                    <a href="contact.html" class="btn btn-primary w-100">Contact Me</a>
+                    <p class="mt-3 mb-0 text-muted"><small>alex@artistrystudio.com</small></p>
                 </div>
             </div>
-
-            <hr class="my-5" style="border-color: rgba(255,255,255,0.15);">
-
-            <div class="row">
+            <div class="row mt-5 border-top border-secondary pt-4">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="text-white-50">&copy; 2023 Artistry Studio. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="text-white-50">Designed with passion for art</p>
+                    <small>&copy; 2023 Artistry Studio. All rights reserved.</small>
                 </div>
             </div>
         </div>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="scripts.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Cart functionality
+            // -- Data Stores --
             let cart = JSON.parse(localStorage.getItem('artCart')) || {};
             let wishlist = JSON.parse(localStorage.getItem('artWishlist')) || [];
 
-            // Update cart count display
+            // -- Update UI Functions --
             function updateCartCount() {
                 let totalItems = 0;
-                for (let item in cart) {
-                    totalItems += cart[item].quantity;
-                }
+                for (let item in cart) totalItems += cart[item].quantity;
                 document.querySelector('.cart-count').textContent = totalItems;
             }
 
-            // Update wishlist buttons
             function updateWishlistButtons() {
                 document.querySelectorAll('.wishlist-btn').forEach(btn => {
                     const itemId = btn.getAttribute('data-item');
                     const heartIcon = btn.querySelector('i');
-
                     if (wishlist.includes(itemId)) {
                         btn.classList.add('active');
                         heartIcon.classList.remove('bi-heart');
@@ -613,326 +448,200 @@
                 });
             }
 
-            // Add to cart functionality
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', function () {
-                    const itemId = this.getAttribute('data-item');
-                    const price = parseFloat(this.getAttribute('data-price'));
-                    const quantity = parseInt(document.querySelector(`.quantity[data-item="${itemId}"]`).textContent);
-
-                    if (cart[itemId]) {
-                        cart[itemId].quantity += quantity;
-                    } else {
-                        const itemName = this.closest('.shop-item-content').querySelector('h4').textContent;
-                        const itemImage = this.closest('.shop-item').querySelector('img').src;
-                        const itemBadge = this.closest('.shop-item').querySelector('.original-badge').textContent;
-
-                        cart[itemId] = {
-                            name: itemName,
-                            price: price,
-                            quantity: quantity,
-                            image: itemImage,
-                            type: itemBadge
-                        };
-                    }
-
-                    localStorage.setItem('artCart', JSON.stringify(cart));
-                    updateCartCount();
-                    showNotification('Item added to cart!');
-
-                    // Reset quantity to 1
-                    document.querySelector(`.quantity[data-item="${itemId}"]`).textContent = '1';
-                });
-            });
-
-            // Quantity controls
-            document.querySelectorAll('.quantity-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const itemId = this.getAttribute('data-item').replace('minus-', '').replace('plus-', '');
-                    const quantitySpan = document.querySelector(`.quantity[data-item="${itemId}"]`);
-                    let quantity = parseInt(quantitySpan.textContent);
-
-                    if (this.classList.contains('plus')) {
-                        quantity++;
-                    } else if (this.classList.contains('minus') && quantity > 1) {
-                        quantity--;
-                    }
-
-                    quantitySpan.textContent = quantity;
-                });
-            });
-
-            // Wishlist functionality
-            document.querySelectorAll('.wishlist-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const itemId = this.getAttribute('data-item');
-                    const heartIcon = this.querySelector('i');
-
-                    if (wishlist.includes(itemId)) {
-                        wishlist = wishlist.filter(id => id !== itemId);
-                        heartIcon.classList.remove('bi-heart-fill');
-                        heartIcon.classList.add('bi-heart');
-                        showNotification('Removed from wishlist');
-                    } else {
-                        wishlist.push(itemId);
-                        heartIcon.classList.remove('bi-heart');
-                        heartIcon.classList.add('bi-heart-fill');
-                        showNotification('Added to wishlist!');
-                    }
-
-                    this.classList.toggle('active');
-                    localStorage.setItem('artWishlist', JSON.stringify(wishlist));
-                });
-            });
-
-            // Filter functionality
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filter = this.getAttribute('data-filter');
-                    const items = document.querySelectorAll('.shop-item-container');
-
-                    items.forEach(item => {
-                        if (filter === 'all') {
-                            item.style.display = 'block';
-                        } else if (filter === 'original' && item.getAttribute('data-category') === 'original') {
-                            item.style.display = 'block';
-                        } else if (filter === 'print' && item.getAttribute('data-category') === 'print') {
-                            item.style.display = 'block';
-                        } else if (filter === 'available') {
-                            const soldOut = item.querySelector('.sold-out-overlay');
-                            item.style.display = soldOut ? 'none' : 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Sort functionality
-            document.getElementById('sortSelect').addEventListener('change', function () {
-                const sortBy = this.value;
-                const container = document.getElementById('shopItems');
-                const items = Array.from(container.querySelectorAll('.shop-item-container'));
-
-                items.sort((a, b) => {
-                    const priceA = parseFloat(a.getAttribute('data-price'));
-                    const priceB = parseFloat(b.getAttribute('data-price'));
-                    const dateA = parseInt(a.getAttribute('data-date'));
-                    const dateB = parseInt(b.getAttribute('data-date'));
-
-                    if (sortBy === 'price-low') {
-                        return priceA - priceB;
-                    } else if (sortBy === 'price-high') {
-                        return priceB - priceA;
-                    } else if (sortBy === 'newest') {
-                        return dateB - dateA;
-                    } else {
-                        return 0;
-                    }
-                });
-
-                items.forEach(item => container.appendChild(item));
-
-                // Add fade-in animation to reordered items
-                items.forEach((item, index) => {
-                    item.style.animationDelay = `${index * 0.1}s`;
-                    item.classList.add('fade-in');
-                });
-            });
-
-            // Cart modal functionality
-            document.getElementById('cartSummary').addEventListener('click', function () {
-                showCartModal();
-            });
-
-            document.getElementById('cartOverlay').addEventListener('click', function () {
-                hideCartModal();
-            });
-
-            document.getElementById('closeCart').addEventListener('click', function () {
-                hideCartModal();
-            });
-
-            function showCartModal() {
-                updateCartModal();
-                document.getElementById('cartModal').style.display = 'block';
-                document.getElementById('cartOverlay').style.display = 'block';
-            }
-
-            function hideCartModal() {
-                document.getElementById('cartModal').style.display = 'none';
-                document.getElementById('cartOverlay').style.display = 'none';
-            }
-
             function updateCartModal() {
-                const cartItemsContainer = document.getElementById('cartItems');
+                const container = document.getElementById('cartItems');
                 let subtotal = 0;
 
                 if (Object.keys(cart).length === 0) {
-                    cartItemsContainer.innerHTML = '<p class="text-center text-muted">Your cart is empty</p>';
+                    container.innerHTML = '<p class="text-center text-muted py-4">Your cart is empty.</p>';
                 } else {
-                    cartItemsContainer.innerHTML = '';
-
+                    container.innerHTML = '';
                     for (let itemId in cart) {
                         const item = cart[itemId];
                         const itemTotal = item.price * item.quantity;
                         subtotal += itemTotal;
 
-                        const cartItem = document.createElement('div');
-                        cartItem.className = 'cart-item';
-                        // UPDATED JAVASCRIPT CURRENCY SYMBOLS
-                        cartItem.innerHTML = `
-                            <div style="flex: 1;">
-                                <strong>${item.name}</strong>
-                                <div class="text-muted small">${item.type}</div>
-                                <div class="d-flex align-items-center mt-2">
-                                    <button class="btn btn-sm btn-outline-secondary cart-minus" data-id="${itemId}">-</button>
-                                    <span class="mx-2">${item.quantity}</span>
-                                    <button class="btn btn-sm btn-outline-secondary cart-plus" data-id="${itemId}">+</button>
-                                    <button class="btn btn-sm btn-link text-danger cart-remove ms-2" data-id="${itemId}">Remove</button>
+                        container.innerHTML += `
+                            <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                                <img src="${item.image}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;" class="me-3">
+                                <div style="flex: 1;">
+                                    <h6 class="mb-0">${item.name}</h6>
+                                    <small class="text-muted">${item.type}</small>
+                                    <div class="d-flex align-items-center mt-2">
+                                        <button class="btn btn-sm btn-light border rounded-circle p-0" style="width:24px;height:24px;" onclick="changeCartQty('${itemId}', -1)">-</button>
+                                        <span class="mx-2 small">${item.quantity}</span>
+                                        <button class="btn btn-sm btn-light border rounded-circle p-0" style="width:24px;height:24px;" onclick="changeCartQty('${itemId}', 1)">+</button>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="fw-bold">₹${itemTotal}</div>
+                                    <button class="btn btn-link text-danger p-0 small text-decoration-none" onclick="removeFromCart('${itemId}')">Remove</button>
                                 </div>
                             </div>
-                            <div class="text-end">
-                                <div class="fw-bold">₹${(itemTotal).toFixed(2)}</div>
-                                <div class="text-muted small">₹${item.price} each</div>
-                            </div>
                         `;
-                        cartItemsContainer.appendChild(cartItem);
                     }
-
-                    // Add event listeners to cart item buttons
-                    document.querySelectorAll('.cart-minus').forEach(btn => {
-                        btn.addEventListener('click', function () {
-                            const id = this.getAttribute('data-id');
-                            if (cart[id].quantity > 1) {
-                                cart[id].quantity--;
-                            } else {
-                                delete cart[id];
-                            }
-                            localStorage.setItem('artCart', JSON.stringify(cart));
-                            updateCartCount();
-                            updateCartModal();
-                        });
-                    });
-
-                    document.querySelectorAll('.cart-plus').forEach(btn => {
-                        btn.addEventListener('click', function () {
-                            const id = this.getAttribute('data-id');
-                            cart[id].quantity++;
-                            localStorage.setItem('artCart', JSON.stringify(cart));
-                            updateCartCount();
-                            updateCartModal();
-                        });
-                    });
-
-                    document.querySelectorAll('.cart-remove').forEach(btn => {
-                        btn.addEventListener('click', function () {
-                            const id = this.getAttribute('data-id');
-                            delete cart[id];
-                            localStorage.setItem('artCart', JSON.stringify(cart));
-                            updateCartCount();
-                            updateCartModal();
-                            showNotification('Item removed from cart');
-                        });
-                    });
                 }
-
-                // UPDATED JAVASCRIPT CURRENCY SYMBOLS
-                document.getElementById('cartSubtotal').textContent = `₹${subtotal.toFixed(2)}`;
-                document.getElementById('cartTotal').textContent = `₹${subtotal.toFixed(2)}`;
+                document.getElementById('cartSubtotal').textContent = `₹${subtotal}`;
+                document.getElementById('cartTotal').textContent = `₹${subtotal}`;
             }
 
-            // Checkout button
-            document.getElementById('checkoutBtn').addEventListener('click', function () {
-                if (Object.keys(cart).length === 0) {
-                    showNotification('Your cart is empty!');
-                } else {
-                    showNotification('Proceeding to checkout...');
-                    setTimeout(() => {
-                        alert('Thank you for your purchase! In a real application, this would redirect to a secure checkout page.');
+            // -- Event Listeners --
 
-                        // Clear cart after checkout
-                        cart = {};
-                        localStorage.setItem('artCart', JSON.stringify(cart));
-                        updateCartCount();
-                        updateCartModal();
-                        hideCartModal();
-                    }, 500);
-                }
+            // 1. Add to Cart
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-item');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    const qtySpan = document.querySelector(`.quantity[data-item="${id}"]`);
+                    const quantity = parseInt(qtySpan.textContent);
+                    const card = this.closest('.shop-item');
+                    const name = card.querySelector('h4').textContent;
+                    const image = card.querySelector('img').src;
+                    const type = card.querySelector('.art-card-badge').textContent;
+
+                    if(cart[id]) {
+                        cart[id].quantity += quantity;
+                    } else {
+                        cart[id] = { name, price, quantity, image, type };
+                    }
+
+                    localStorage.setItem('artCart', JSON.stringify(cart));
+                    updateCartCount();
+                    showNotification(`Added ${quantity} ${name} to cart`);
+                    qtySpan.textContent = 1; // Reset display
+                });
             });
 
-            // Notification function
-            function showNotification(message) {
-                // Remove existing notification
-                const existingNotification = document.querySelector('.notification');
-                if (existingNotification) {
-                    existingNotification.remove();
+            // 2. Page Quantity Selectors
+            document.querySelectorAll('.quantity-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-item');
+                    const span = document.querySelector(`.quantity[data-item="${id}"]`);
+                    let val = parseInt(span.textContent);
+                    if (this.classList.contains('plus')) val++;
+                    else if (val > 1) val--;
+                    span.textContent = val;
+                });
+            });
+
+            // 3. Wishlist
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-item');
+                    if(wishlist.includes(id)) {
+                        wishlist = wishlist.filter(x => x !== id);
+                        showNotification("Removed from wishlist");
+                    } else {
+                        wishlist.push(id);
+                        showNotification("Added to wishlist");
+                    }
+                    localStorage.setItem('artWishlist', JSON.stringify(wishlist));
+                    updateWishlistButtons();
+                });
+            });
+
+            // 4. Filters
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    
+                    document.querySelectorAll('.shop-item-container').forEach(item => {
+                        const cat = item.getAttribute('data-category');
+                        const soldOut = item.querySelector('.sold-out-overlay');
+                        
+                        let show = false;
+                        if (filter === 'all') show = true;
+                        else if (filter === 'available') show = !soldOut;
+                        else if (filter === cat) show = true;
+
+                        item.style.display = show ? 'block' : 'none';
+                        if(show) item.querySelector('.shop-item').classList.add('fade-in');
+                    });
+                });
+            });
+
+            // 5. Sorting
+            document.getElementById('sortSelect').addEventListener('change', function() {
+                const sortBy = this.value;
+                const container = document.getElementById('shopItems');
+                const items = Array.from(container.querySelectorAll('.shop-item-container'));
+
+                items.sort((a, b) => {
+                    const pA = parseFloat(a.getAttribute('data-price'));
+                    const pB = parseFloat(b.getAttribute('data-price'));
+                    const dA = parseInt(a.getAttribute('data-date'));
+                    const dB = parseInt(b.getAttribute('data-date'));
+
+                    if (sortBy === 'price-low') return pA - pB;
+                    if (sortBy === 'price-high') return pB - pA;
+                    if (sortBy === 'newest') return dB - dA;
+                    return 0; // Featured (DOM order)
+                });
+
+                items.forEach(item => container.appendChild(item));
+            });
+
+            // -- Modal Logic --
+            window.changeCartQty = function(id, change) {
+                if (cart[id]) {
+                    cart[id].quantity += change;
+                    if (cart[id].quantity < 1) delete cart[id];
+                    localStorage.setItem('artCart', JSON.stringify(cart));
+                    updateCartCount();
+                    updateCartModal();
                 }
+            };
 
-                // Create notification
-                const notification = document.createElement('div');
-                notification.className = 'notification';
-                notification.innerHTML = message;
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 100px;
-                    right: 20px;
-                    background: var(--primary-color);
-                    color: white;
-                    padding: 0.875rem 1.25rem; /* Reduced padding */
-                    border-radius: 8px;
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                    z-index: 9999;
-                    animation: slideIn 0.3s ease;
-                    font-weight: 500;
+            window.removeFromCart = function(id) {
+                delete cart[id];
+                localStorage.setItem('artCart', JSON.stringify(cart));
+                updateCartCount();
+                updateCartModal();
+            };
+
+            document.getElementById('cartSummary').onclick = () => {
+                updateCartModal();
+                document.getElementById('cartModal').style.display = 'block';
+                document.getElementById('cartOverlay').style.display = 'block';
+            };
+
+            const closeCart = () => {
+                document.getElementById('cartModal').style.display = 'none';
+                document.getElementById('cartOverlay').style.display = 'none';
+            };
+
+            document.getElementById('closeCart').onclick = closeCart;
+            document.getElementById('cartOverlay').onclick = closeCart;
+
+            document.getElementById('checkoutBtn').onclick = () => {
+                if(Object.keys(cart).length === 0) alert("Cart is empty");
+                else {
+                    alert("Proceeding to checkout demo...");
+                    cart = {};
+                    localStorage.setItem('artCart', JSON.stringify(cart));
+                    updateCartCount();
+                    closeCart();
+                }
+            };
+
+            // Helper: Notification
+            function showNotification(msg) {
+                const n = document.createElement('div');
+                n.textContent = msg;
+                n.style.cssText = `
+                    position: fixed; top: 100px; right: 20px; background: var(--dark-color); color: white;
+                    padding: 10px 20px; border-radius: 8px; z-index: 9999; animation: fadeInUp 0.3s;
                 `;
-
-                document.body.appendChild(notification);
-
-                // Remove after 3 seconds
-                setTimeout(() => {
-                    notification.style.animation = 'slideOut 0.3s ease';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.parentNode.removeChild(notification);
-                        }
-                    }, 300);
-                }, 3000);
+                document.body.appendChild(n);
+                setTimeout(() => n.remove(), 3000);
             }
 
-            // Add CSS animations if not already present
-            if (!document.querySelector('#animations')) {
-                const style = document.createElement('style');
-                style.id = 'animations';
-                style.textContent = `
-                    @keyframes slideIn {
-                        from { transform: translateX(100%); opacity: 0; }
-                        to { transform: translateX(0); opacity: 1; }
-                    }
-                    @keyframes slideOut {
-                        from { transform: translateX(0); opacity: 1; }
-                        to { transform: translateX(100%); opacity: 0; }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-
-            // Initialize
+            // Init
             updateCartCount();
             updateWishlistButtons();
-
-            // Add data attributes to quantity buttons for proper targeting
-            document.querySelectorAll('.quantity-btn').forEach((btn, index) => {
-                const itemId = Math.floor(index / 2) + 1;
-                if (btn.classList.contains('minus')) {
-                    btn.setAttribute('data-item', `minus-${itemId}`);
-                } else {
-                    btn.setAttribute('data-item', `plus-${itemId}`);
-                }
-            });
         });
     </script>
 </body>
