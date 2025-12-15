@@ -21,7 +21,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Artistry Studio</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" class="img-fluid" width="200px">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,9 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item ms-lg-3">
+                    <!-- <li class="nav-item ms-lg-3">
                         <a class="nav-link navbar-profile" href="#"><i class="bi bi-person-circle"></i></a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -61,7 +63,7 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active"
-                    style="background-image: url('https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                    style="background-image: url('https://images.unsplash.com/photo-1758521233238-4cf82e9a9c1e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                     <div class="carousel-caption-custom">
                         <div class="container">
                             <h1>Welcome to My World of Colors</h1>
@@ -76,7 +78,7 @@
                 </div>
 
                 <div class="carousel-item"
-                    style="background-image: url('https://images.unsplash.com/photo-1549491630-f56e30ed9b4c?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    style="background-image: url('https://images.unsplash.com/photo-1677064730827-d8bbf7d1ceed?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                     <div class="carousel-caption-custom">
                         <div class="container">
                             <h1>Oil Paintings & Fine Art Prints</h1>
@@ -84,14 +86,14 @@
                                 work or high-quality print.</p>
                             <div class="mt-4">
                                 <a href="shop.html" class="btn btn-primary btn-lg me-3">Visit Shop</a>
-                                <a href="gallery.html" class="btn btn-outline-light btn-lg">View Full Gallery</a>
+                                <a href="gallery.html" class="btn btn-outline-light btn-lg">View More</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item"
-                    style="background-image: url('https://images.unsplash.com/photo-1599622919929-e4d5885060ee?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    style="background-image: url('https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
                     <div class="carousel-caption-custom">
                         <div class="container">
                             <h1>Specializing in Abstract & Nature</h1>
@@ -160,7 +162,7 @@
         </div>
     </section>
 
-    <section id="gallery" class="section">
+    <!-- <section id="gallery" class="section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
@@ -272,7 +274,76 @@
                 <a href="gallery.html" class="btn btn-primary btn-lg">View Full Gallery</a>
             </div>
         </div>
+    </section> -->
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center">Featured Artworks</h2>
+                    <p class="lead">A curated collection of my recent paintings and commissions</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="art-card">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Oil Painting</span>
+                            <img src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?q=80&w=690&auto=format&fit=crop"
+                                alt="Abstract Harmony">
+
+                            <div class="art-overlay-info">
+                                <h4>Abstract Harmony</h4>
+                                <p>Oil on Canvas | 48" x 36"</p>
+                                <span class="status-available status-badge">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="art-card">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Watercolor</span>
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=500&q=80"
+                                alt="Mountain Serenity">
+
+                            <div class="art-overlay-info">
+                                <h4>Mountain Serenity</h4>
+                                <p>Watercolor | 24" x 18"</p>
+                                <span class="status-reserved status-badge">Reserved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="art-card">
+                        <div class="art-card-img-container">
+                            <span class="art-card-badge">Acrylic</span>
+                            <img src="https://plus.unsplash.com/premium_photo-1664013263421-91e3a8101259?q=80&w=687&auto=format&fit=crop"
+                                alt="Urban Dreams">
+
+                            <div class="art-overlay-info">
+                                <h4>Urban Dreams</h4>
+                                <p>Acrylic on Canvas | 30" x 40"</p>
+                                <span class="status-sold status-badge">Sold</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="gallery.html" class="btn btn-primary btn-lg rounded-5">View More</a>
+            </div>
+        </div>
     </section>
+
+
     <section class="stats-counter py-5 bg-light-color">
         <div class="container">
             <div class="row">
@@ -391,7 +462,8 @@
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h3 class="mb-4">Artistry Studio</h3>
-                    <p class="text-white-75">A professional painting studio dedicated to creating expressive, emotive artworks that transform spaces and inspire emotions.</p>
+                    <p class="text-white-75">A professional painting studio dedicated to creating expressive, emotive
+                        artworks that transform spaces and inspire emotions.</p>
                     <div class="social-icons">
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -399,7 +471,7 @@
                         <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-4">Quick Links</h5>
                     <div class="footer-links">
@@ -410,7 +482,7 @@
                         <a href="contact.html">Contact</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-4">Services</h5>
                     <div class="footer-links">
@@ -420,20 +492,22 @@
                         <a href="contact.html">Corporate Art</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3">
                     <h5 class="mb-4">Get in Touch</h5>
                     <p class="text-white-75 mb-3">Ready to commission a custom piece or inquire about pricing?</p>
                     <div class="mb-3">
                         <a href="contact.html" class="btn btn-primary w-100 mb-2">Start a Commission</a>
-                        <p class="text-white-50 mt-3 mb-1"><i class="bi bi-envelope-fill me-2" style="color: var(--accent-color);"></i>alex@artistrystudio.com</p>
-                        <p class="text-white-50"><i class="bi bi-geo-alt-fill me-2" style="color: var(--accent-color);"></i>Studio, Chicago IL</p>
+                        <p class="text-white-50 mt-3 mb-1"><i class="bi bi-envelope-fill me-2"
+                                style="color: var(--accent-color);"></i>alex@artistrystudio.com</p>
+                        <p class="text-white-50"><i class="bi bi-geo-alt-fill me-2"
+                                style="color: var(--accent-color);"></i>Studio, Chicago IL</p>
                     </div>
                 </div>
             </div>
-            
+
             <hr class="my-5" style="border-color: rgba(255,255,255,0.15);">
-            
+
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="text-white-50">&copy; 2023 Artistry Studio. All rights reserved.</p>

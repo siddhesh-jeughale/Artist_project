@@ -22,7 +22,11 @@ body {
     padding-top: 80px;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--dark-color);
@@ -45,7 +49,7 @@ h1, h2, h3, h4, h5 {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline-primary {
@@ -85,7 +89,8 @@ h1, h2, h3, h4, h5 {
     position: relative;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--secondary-color) !important;
 }
 
@@ -100,7 +105,8 @@ h1, h2, h3, h4, h5 {
     transition: var(--transition);
 }
 
-.nav-link:hover:after, .nav-link.active:after {
+.nav-link:hover:after,
+.nav-link.active:after {
     width: 100%;
 }
 
@@ -109,13 +115,15 @@ h1, h2, h3, h4, h5 {
     padding: 0.2rem 0.4rem;
     min-width: 18px;
 }
+
 /* Navbar Profile Icon */
 .navbar-profile {
     font-size: 1.5rem;
     color: var(--dark-color);
     transition: var(--transition);
     padding: 0.5rem;
-    line-height: 1; /* Aligns the icon nicely */
+    line-height: 1;
+    /* Aligns the icon nicely */
 }
 
 .navbar-profile:hover {
@@ -126,7 +134,8 @@ h1, h2, h3, h4, h5 {
 
 /* Hero Carousel Customization */
 .hero-carousel {
-    height: 90vh; /* Set a specific height for the carousel */
+    height: 90vh;
+    /* Set a specific height for the carousel */
 }
 
 .carousel-item {
@@ -147,13 +156,16 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-bottom: 50px; /* Offset from Bootstrap default caption */
+    padding-bottom: 50px;
+    /* Offset from Bootstrap default caption */
 }
 
 .carousel-caption-custom h1 {
-    color: white !important; /* Ensure H1 is white */
+    color: white !important;
+    /* Ensure H1 is white */
     font-size: 4rem;
-    animation: fadeInUp 1s ease-out; /* Re-use existing animation */
+    animation: fadeInUp 1s ease-out;
+    /* Re-use existing animation */
 }
 
 .carousel-caption-custom p {
@@ -170,8 +182,8 @@ h1, h2, h3, h4, h5 {
 
 /* Page Header */
 .page-header {
-    background:  
-                url('https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background:
+        url('https://images.unsplash.com/photo-1758521233238-4cf82e9a9c1e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     color: white;
@@ -224,115 +236,130 @@ h1, h2, h3, h4, h5 {
     font-weight: 300;
     margin-bottom: 2rem;
 }
-/* Base Card Styling for 3D effect */
+
+/* Card Container Structure */
 .art-card {
-    height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for glass effect */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
-    /* ENHANCED 3D TRANSITION */
-    transition: all 0.5s ease-in-out; 
-    transform-style: preserve-3d; /* Key for 3D rotation */
-    
-    position: relative; 
-    perspective: 1000px; /* Perspective for the tilt */
-}
-
-/* 3D Tilt Effect on Hover */
-.art-card:hover {
-    transform: rotateX(2deg) rotateY(-2deg) scale(1.02); /* Subtle 3D rotation and slight lift */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25); /* Deeper shadow */
-}
-
-.art-card-img-container {
-    height: 300px; 
-    overflow: hidden;
     position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Ensures the zoomed image doesn't spill out */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy smooth transition */
 }
 
+/* Card Lift Effect on Hover */
+.art-card:hover {
+    transform: translateY(-10px);
+    /* Moves card up */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container formatting */
+.art-card-img-container {
+    position: relative;
+    height: 400px;
+    /* Fixed height for uniformity */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* The Image itself */
 .art-card-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Image transition includes blur */
-    transition: transform 0.6s ease, filter 0.6s ease; 
+    /* Ensures image covers area without stretching */
+    transition: transform 0.6s ease;
+    /* Slower transition for smooth zoom */
 }
 
-/* Image Blur on Hover (Glassmorphism effect) */
+/* Image Zoom on Hover */
 .art-card:hover .art-card-img-container img {
     transform: scale(1.1);
-    filter: blur(4px) brightness(0.8); /* Image blurs and darkens on hover */
 }
 
+/* The Floating Badge (e.g., "Oil Painting") */
+.art-card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-/* --- NEW: Frosted Glass Overlay Styling (Glassmorphism) --- */
+/* Overlay Info Section (Title, Size, etc.) */
 .art-overlay-info {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    padding: 15px 25px;
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
     color: white;
-    z-index: 10;
-    
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.1); /* Very light background */
-    backdrop-filter: blur(10px); /* Frosted Glass Effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    
-    /* Animation initial state: faded and scaled down */
-    transform: scaleY(0); 
-    transform-origin: bottom;
+    z-index: 2;
+
+    /* Animation setup */
+    transform: translateY(20px);
+    /* Start slightly pushed down */
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Springy transition */
+    /* Start hidden */
+    transition: all 0.4s ease-in-out;
 }
 
+/* Reveal Overlay on Hover */
 .art-card:hover .art-overlay-info {
-    /* Animation final state: fully visible */
-    transform: scaleY(1);
+    transform: translateY(0);
     opacity: 1;
 }
 
+/* Typography clean up inside the card */
 .art-overlay-info h4 {
-    color: var(--accent-color); 
-    margin-bottom: 3px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
     font-weight: 700;
+    color: var(--accent-color) !important;
 }
 
 .art-overlay-info p {
-    margin-bottom: 3px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    opacity: 0.9;
 }
 
-.art-overlay-info .status-badge {
-    margin-top: 8px;
-    font-size: 0.8rem;
+/* Status Badge (Available/Sold) styling */
+.status-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Sale Badge is now a transparent pill at the top */
-.art-card-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+.status-available {
+    background-color: #28a745;
     color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    z-index: 11; 
-    transition: all 0.3s ease;
 }
 
-/* Status Badges need to be visible on the dark glass */
-.status-available { background: #28a745; color: white; padding: 3px 8px; border-radius: 15px; }
-.status-sold { background: #dc3545; color: white; padding: 3px 8px; border-radius: 15px; }
-.status-reserved { background: #ffc107; color: #212529; padding: 3px 8px; border-radius: 15px; }
+.status-reserved {
+    background-color: #ffc107;
+    color: black;
+}
 
+.status-sold {
+    background-color: #dc3545;
+    color: white;
+}
 
 /* Stats Counter */
 .stats-counter {
@@ -372,13 +399,13 @@ h1, h2, h3, h4, h5 {
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .artist-info:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transform: translateY(-3px);
 }
 
@@ -419,7 +446,7 @@ h1, h2, h3, h4, h5 {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Achievement Cards */
@@ -452,14 +479,15 @@ h1, h2, h3, h4, h5 {
 }
 
 
-   /* Vision & Mission Styling */
+/* Vision & Mission Styling */
 .vision-mission-card {
     border: none;
-    background-color: white; /* Changed from light-color for better contrast against bg-light-color section */
+    background-color: white;
+    /* Changed from light-color for better contrast against bg-light-color section */
     padding: 2.5rem;
     border-radius: 15px;
     height: 100%;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 }
 
@@ -473,6 +501,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 1rem;
     display: block;
 }
+
 .vision-mission-card h4 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -487,14 +516,16 @@ h1, h2, h3, h4, h5 {
     padding: 2.5rem 1.5rem;
     background-color: white;
     border-radius: 15px;
-    height: 100%; /* Ensures blocks align nicely in the grid */
+    height: 100%;
+    /* Ensures blocks align nicely in the grid */
     text-align: center;
-    
+
     /* Subtle base shadow and smooth transition */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .why-choose-item:before {
@@ -511,11 +542,12 @@ h1, h2, h3, h4, h5 {
 
 .why-choose-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .why-choose-item:hover:before {
-    opacity: 1; /* Dark overlay appears on hover */
+    opacity: 1;
+    /* Dark overlay appears on hover */
 }
 
 .why-choose-icon {
@@ -523,13 +555,14 @@ h1, h2, h3, h4, h5 {
     color: var(--accent-color);
     margin-bottom: 1.5rem;
     /* Ensure icon stays on top of the hover overlay */
-    position: relative; 
-    z-index: 2; 
+    position: relative;
+    z-index: 2;
     transition: color 0.4s ease;
 }
 
 .why-choose-item:hover .why-choose-icon {
-    color: var(--light-color); /* Icon turns light on hover */
+    color: var(--light-color);
+    /* Icon turns light on hover */
 }
 
 .why-choose-content {
@@ -545,7 +578,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .why-choose-item:hover .why-choose-content h5 {
-    color: var(--light-color); /* Title turns light on hover */
+    color: var(--light-color);
+    /* Title turns light on hover */
 }
 
 .why-choose-content p {
@@ -556,7 +590,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .why-choose-item:hover .why-choose-content p {
-    color: rgba(242, 233, 228, 0.8); /* Text turns soft white on hover */
+    color: rgba(242, 233, 228, 0.8);
+    /* Text turns soft white on hover */
 }
 
 
@@ -676,7 +711,7 @@ h1, h2, h3, h4, h5 {
     background: var(--primary-color);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .year-filter {
@@ -705,110 +740,141 @@ h1, h2, h3, h4, h5 {
     color: white;
     border-color: var(--primary-color);
 }
-.gallery-item-wrapper {
-    /* Use Bootstrap's margin for grid spacing, overriding old margin-bottom */
-    margin-bottom: 30px; 
-}
 
+/* 1. Main Item Container */
 .gallery-item {
-    height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
-    /* ENHANCED 3D TRANSITION */
-    transition: all 0.5s ease-in-out; 
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    
     position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    /* Smooth rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    /* Fixed image height for uniform grid appearance */
-    height: 350px; 
+    background-color: #fff;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s ease;
 }
 
-/* 3D Tilt Effect on Hover */
+/* Lift effect on hover */
 .gallery-item:hover {
-    transform: rotateX(2deg) rotateY(-2deg) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* 2. Image Zoom Effect */
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: 450px;
+    /* Adjust height as needed */
     object-fit: cover;
-    transition: transform 0.6s ease, filter 0.6s ease; 
+    display: block;
+    transition: transform 0.7s ease;
 }
 
-/* Image Blur on Hover (Glassmorphism effect) */
 .gallery-item:hover img {
     transform: scale(1.1);
-    filter: blur(4px) brightness(0.7); /* Darker and blurrier image */
 }
 
-/* --- NEW: Frosted Glass Overlay Styling (Glassmorphism) --- */
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px 25px;
-    color: white;
-    z-index: 10;
-    
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    /* Animation initial state: hidden */
-    transform: scaleY(0); 
-    transform-origin: bottom;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Springy transition */
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: scaleY(1);
-    opacity: 1;
-}
-
-.gallery-overlay h4 {
-    color: var(--accent-color); 
-    margin-bottom: 3px;
-    font-size: 1.5rem; /* Slightly larger title in overlay */
-}
-
-.gallery-overlay p {
-    color: rgba(242, 233, 228, 0.8);
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-}
-
-/* Badge on Image (Type/Medium) */
+/* 3. The Medium Badge (Oil, Watercolor, etc.) */
 .art-badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: var(--accent-color); /* Using Accent Color for prominence */
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 11;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 3;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hiding the redundant info block below the image */
-.gallery-info {
-    display: none;
+/* 4. Overlay Information */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    /* Keeps text at the bottom */
+    padding: 30px;
+    opacity: 0;
+    /* Hidden by default */
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* 5. Text Animation inside Overlay */
+.gallery-overlay .text-start {
+    transform: translateY(20px);
+    /* Start slightly lower */
+    transition: transform 0.4s ease-out;
+}
+
+.gallery-item:hover .gallery-overlay .text-start {
+    transform: translateY(0);
+    /* Slide up into view */
+}
+
+/* 6. Typography Styling */
+.gallery-overlay h4 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+/* 7. Price and Status Badges */
+.price-tag {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.status-available,
+.status-sold,
+.status-reserved {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.status-available {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-sold {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.status-reserved {
+    background-color: #f1c40f;
+    color: #000;
 }
 
 
 /* --- Video Section Styling --- */
-.video-card {
+/* .video-card {
     background: var(--dark-color);
     border-radius: 15px;
     overflow: hidden;
@@ -820,7 +886,7 @@ h1, h2, h3, h4, h5 {
 .video-wrapper {
     position: relative;
     width: 100%;
-    /* 16:9 Aspect Ratio */
+    /* 16:9 Aspect Ratio 
     padding-bottom: 56.25%; 
     height: 0;
 }
@@ -833,6 +899,124 @@ h1, h2, h3, h4, h5 {
     height: 100%;
     border: none;
     border-radius: 15px;
+} */
+
+/* Section Background (Optional: Makes the whole section slightly off-white to contrast the cards) */
+.section-video {
+    background-color: #f8f9fa;
+    /* Or keep your var(--light-color) */
+    position: relative;
+}
+
+/* The Main Video Card */
+.video-card {
+    background: #1a1a1a;
+    /* Dark background for cinematic feel */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    /* Ensures equal height in grid */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effect: Lift & Glow */
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Video Wrapper (16:9 Aspect Ratio) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Content Area Styling */
+.video-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video-content h5 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.video-content p {
+    color: #b0b0b0;
+    /* Softer grey text */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* The "Watch Now" Button/Link */
+.watch-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    color: var(--primary-color, #4a90e2);
+    /* Uses your primary color */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.watch-link i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Button Animation on Card Hover */
+.video-card:hover .watch-link {
+    opacity: 1;
+    color: #fff;
+    /* Turns white on hover for focus */
+}
+
+.video-card:hover .watch-link i {
+    transform: translateX(5px);
+    /* Arrow moves right */
+}
+
+/* Optional: Badge for Duration/Type */
+.video-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    pointer-events: none;
+    /* Let clicks pass through to video */
 }
 
 .load-more {
@@ -852,8 +1036,9 @@ h1, h2, h3, h4, h5 {
 
 .load-more-btn:hover {
     background: var(--dark-color);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Shop Page */
@@ -861,7 +1046,7 @@ h1, h2, h3, h4, h5 {
     background: rgba(255, 255, 255, 0.95);
     padding: 1.25rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
 }
 
@@ -906,7 +1091,7 @@ h1, h2, h3, h4, h5 {
 
 .shop-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .shop-item img {
@@ -1010,7 +1195,7 @@ h1, h2, h3, h4, h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1032,7 +1217,7 @@ h1, h2, h3, h4, h5 {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1067,7 +1252,7 @@ h1, h2, h3, h4, h5 {
     background: white;
     padding: 1.75rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1001;
     width: 90%;
     max-width: 500px;
@@ -1082,7 +1267,7 @@ h1, h2, h3, h4, h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
@@ -1097,12 +1282,16 @@ h1, h2, h3, h4, h5 {
 /* Testimonials */
 .testimonial-card {
     background: white;
-    padding: 3rem 2rem 2.5rem; /* Increased vertical padding for better spacing */
-    border-radius: 15px; /* Slightly rounder corners */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* More subtle, deeper shadow */
+    padding: 3rem 2rem 2.5rem;
+    /* Increased vertical padding for better spacing */
+    border-radius: 15px;
+    /* Slightly rounder corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    /* More subtle, deeper shadow */
     height: 100%;
     transition: transform 0.3s ease;
-    position: relative; /* Needed for absolute quote icon */
+    position: relative;
+    /* Needed for absolute quote icon */
 }
 
 /* New Quote Icon Styling */
@@ -1113,7 +1302,8 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     top: 15px;
     left: 20px;
-    opacity: 0.2; /* Subtle background visual element */
+    opacity: 0.2;
+    /* Subtle background visual element */
 }
 
 /* Updated Author Layout for better focus */
@@ -1123,16 +1313,20 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--light-color); /* Separator line for visual break */
+    border-top: 1px solid var(--light-color);
+    /* Separator line for visual break */
 }
 
 /* Ensure the quote text itself stands out */
 .testimonial-card p.quote-text {
-    font-size: 1.35rem; /* Larger font size for impact */
-    font-weight: 300; /* Lighter weight for readability */
+    font-size: 1.35rem;
+    /* Larger font size for impact */
+    font-weight: 300;
+    /* Lighter weight for readability */
     color: var(--dark-color);
     margin-bottom: 1.5rem;
 }
+
 #testimonialCarousel .carousel-item {
     height: auto;
 }
@@ -1196,13 +1390,15 @@ h1, h2, h3, h4, h5 {
 /* Footer */
 footer {
     /* New: Use a warmer, artistic dark gray background */
-    background-color: #363138; 
+    background-color: #363138;
     color: white;
     padding: 5rem 0 2.5rem;
 }
 
-footer h3, footer h5 {
-    color: var(--light-color); /* Use a soft white for headings */
+footer h3,
+footer h5 {
+    color: var(--light-color);
+    /* Use a soft white for headings */
     font-weight: 700;
 }
 
@@ -1212,20 +1408,24 @@ footer h3, footer h5 {
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.7); /* Slightly lighter link color */
+    color: rgba(255, 255, 255, 0.7);
+    /* Slightly lighter link color */
     text-decoration: none;
-    margin-bottom: 0.75rem; /* Increased spacing */
+    margin-bottom: 0.75rem;
+    /* Increased spacing */
     transition: color 0.3s ease;
     font-size: 0.95rem;
 }
 
 .footer-links a:hover {
-    color: var(--accent-color); /* Highlight links with the accent color */
+    color: var(--accent-color);
+    /* Highlight links with the accent color */
 }
 
 .social-icons {
     display: flex;
-    gap: 0.75rem; /* Tighter spacing */
+    gap: 0.75rem;
+    /* Tighter spacing */
     margin-top: 1.5rem;
 }
 
@@ -1237,13 +1437,14 @@ footer h3, footer h5 {
     height: 38px;
     border-radius: 50%;
     /* Subtle border instead of solid background */
-    border: 1px solid rgba(255,255,255,0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    background: var(--accent-color); /* Accent color fill on hover */
+    background: var(--accent-color);
+    /* Accent color fill on hover */
     border-color: var(--accent-color);
     transform: translateY(-2px);
 }
@@ -1262,8 +1463,8 @@ footer .form-control::placeholder {
 }
 
 footer .form-control:focus {
-     background-color: rgba(255, 255, 255, 0.2);
-     border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
 }
 
 footer .btn-outline-light {
@@ -1283,6 +1484,7 @@ footer .btn-outline-light:hover {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1294,6 +1496,7 @@ footer .btn-outline-light:hover {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1305,6 +1508,7 @@ footer .btn-outline-light:hover {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1312,13 +1516,27 @@ footer .btn-outline-light:hover {
 }
 
 @keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideOut {
-    from { transform: translateX(0); opacity: 1; }
-    to { transform: translateX(100%); opacity: 0; }
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
 .fade-in {
@@ -1367,80 +1585,81 @@ footer .btn-outline-light:hover {
     body {
         padding-top: 70px;
     }
-    
+
     .hero {
         padding: 5rem 0;
         min-height: 80vh;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .page-header {
         padding: 80px 0 60px;
     }
-    
+
     .page-header h1 {
         font-size: 2.5rem;
     }
-    
+
     .page-header p {
         font-size: 1rem;
     }
-    
+
     .section {
         padding: 60px 0;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .gallery-filter {
         gap: 5px;
     }
-    
+
     .filter-btn {
         padding: 6px 15px;
         font-size: 0.9rem;
     }
-    
+
     .gallery-item {
         height: 300px;
     }
-    
+
     .exhibition-img {
         height: 200px;
     }
-    
+
     .shop-item img {
         height: 200px;
     }
-    
+
     .cart-summary {
         width: 50px;
         height: 50px;
         bottom: 15px;
         right: 15px;
     }
-    
+
     .compact-section {
         padding: 1.5rem 0;
     }
 
-    .hero-carousel, .carousel-item {
+    .hero-carousel,
+    .carousel-item {
         height: 70vh;
     }
-    
+
     .carousel-caption-custom h1 {
         font-size: 2.2rem;
     }
-    
+
     .carousel-caption-custom p {
         font-size: 1.1rem;
     }
-    
+
     .art-card-img-container {
         height: 250px;
     }
@@ -1450,18 +1669,19 @@ footer .btn-outline-light:hover {
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero .btn {
         width: 100%;
         margin-bottom: 1rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
+
     @media (max-width: 992px) {
-    .carousel-caption-custom h1 {
-        font-size: 3rem;
+        .carousel-caption-custom h1 {
+            font-size: 3rem;
+        }
     }
-}
 }
