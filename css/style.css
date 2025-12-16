@@ -157,7 +157,12 @@ h2.section-title {
 }
 
 /* Remove the underline effect from previous design */
-.nav-link::after { display: none; }
+/* .nav-link::after { 
+     background-color: var(--dark-color);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+ } */
 
 /* Mobile Dropdown Styling */
 @media (max-width: 991px) {

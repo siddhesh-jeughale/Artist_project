@@ -34,7 +34,7 @@
         
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
@@ -310,41 +310,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get button
-                const btn = form.querySelector('button[type="submit"]');
-                const originalText = btn.innerHTML;
-                
-                // Loading state
-                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
-                btn.disabled = true;
-
-                // Simulate sending
-                setTimeout(() => {
-                    // Success state
-                    btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent!';
-                    btn.classList.remove('btn-primary');
-                    btn.classList.add('btn-success');
-                    
-                    form.reset();
-
-                    // Reset button after 3 seconds
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('btn-success');
-                        btn.classList.add('btn-primary');
-                        btn.disabled = false;
-                    }, 3000);
-                }, 1500);
-            });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
