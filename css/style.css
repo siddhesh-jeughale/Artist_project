@@ -35,7 +35,7 @@ body {
     line-height: 1.7;
     background-color: #fff;
     overflow-x: hidden;
-    padding-top: 76px; /* Offset for fixed navbar */
+    /* padding-top: 76px; */
 }
 
 /* Typography */
@@ -62,7 +62,7 @@ h2.section-title {
 /* =========================================
    2. NAVBAR (Glassmorphism)
    ========================================= */
-.navbar {
+/* .navbar {
     background-color: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -105,8 +105,80 @@ h2.section-title {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+} */
+
+/* =========================================
+   2. NAVBAR DESIGN: "THE FLOATING PILL"
+   ========================================= */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.75); /* Higher transparency */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    
+    /* Floating positioning */
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 0; /* 20px from top, centered */
+    border-radius: 50px; /* Pill shape */
+    left: 0; 
+    right: 0;
 }
 
+/* Navbar Brand */
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color: var(--dark-color) !important;
+}
+
+/* Nav Links */
+.nav-link {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--dark-color) !important;
+    margin: 0 0.8rem;
+    padding: 8px 16px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect: Soft Pill Background */
+.nav-link:hover, .nav-link.active {
+    background-color: var(--dark-color);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Remove the underline effect from previous design */
+.nav-link::after { display: none; }
+
+/* Mobile Dropdown Styling */
+@media (max-width: 991px) {
+    .navbar {
+        width: 95%; /* Wider on mobile */
+        margin-top: 15px;
+        border-radius: 20px; /* Less rounded corners on mobile */
+        padding: 1rem;
+    }
+    .navbar-collapse {
+        margin-top: 15px;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-link {
+        margin: 5px 0;
+        border-radius: 10px;
+    }
+}
 /* =========================================
    3. BUTTONS & UI ELEMENTS
    ========================================= */
@@ -155,7 +227,7 @@ h2.section-title {
     min-height: 600px;
 }
 
-.carousel-item {
+#heroCarousel .carousel-item {
     height: 95vh;
     min-height: 600px;
     background-size: cover;
@@ -163,7 +235,7 @@ h2.section-title {
 }
 
 /* Dark overlay for text readability */
-.carousel-item::before {
+#heroCarousel .carousel-item::before {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -205,12 +277,8 @@ h2.section-title {
    5. PAGE HEADERS (Sub-pages)
    ========================================= */
 .page-header {
-    /* Default background if not specified inline */
-    background: linear-gradient(rgba(34, 34, 59, 0.6), rgba(34, 34, 59, 0.6)), url('https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=1600&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    min-height: 400px;
+    height: 80vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -612,168 +680,120 @@ h2.section-title {
     display: block; line-height: 1;
     margin-bottom: 10px;
 }
-
 /* =========================================
-   15. SCROLLABLE TESTIMONIALS (Clean & Light)
+   15. CLASSIC PREMIUM CAROUSEL
    ========================================= */
-.testimonial-section-modern {
-    background: #fff; /* Removed dark gradient */
+.testimonials-section {
+    background-color: var(--light-color); /* Light background to contrast with white card */
     padding: 100px 0;
     position: relative;
     overflow: hidden;
-    color: var(--dark-color);
 }
 
-/* Background Shapes (Subtle Accent Color now) */
-.testimonial-bg-shape {
+/* The Premium Card */
+.testimonial-card {
+    background: #fff;
+    padding: 4rem 3rem;
+    border-radius: 20px; /* Consistent with other cards */
+    box-shadow: var(--shadow-md);
+    position: relative;
+    margin: 20px auto; /* Centered with space for shadow */
+    max-width: 800px; /* Optimal reading width */
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Big Quote Icon */
+.testimonial-quote-icon {
+    font-size: 4rem;
+    color: var(--accent-color);
     position: absolute;
-    border-radius: 50%;
-    background: var(--accent-color);
-    opacity: 0.1; /* Very subtle */
-    z-index: 0;
-    pointer-events: none;
-}
-.shape-1 { width: 500px; height: 500px; top: -200px; left: -100px; }
-.shape-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; }
-
-/* The Scroller Container */
-.testimonial-scroller {
+    top: -20px; /* Floating slightly above */
+    left: 40px;
+    opacity: 1; 
+    background: var(--light-color); /* Matches section bg to look like a cutout */
+    height: 60px;
+    width: 60px;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 30px;
-    padding: 20px 5% 60px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+/* Text Styling */
+.quote-text {
+    font-family:serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--dark-color);
+    margin: 1.5rem 0 2rem;
+    line-height: 1.8;
     position: relative;
     z-index: 2;
 }
 
-.testimonial-scroller::-webkit-scrollbar { display: none; }
-
-/* Individual Slide Wrapper */
-.scroll-card-wrapper {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    transition: var(--transition);
-}
-
-/* Card Style (Clean White) */
-.review-card {
-    background: #fff;
-    border: 1px solid #eee; /* Clean border */
-    padding: 2.5rem;
-    border-radius: 20px;
-    height: 100%;
-    position: relative;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-sm); /* Soft shadow */
-}
-
-.review-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
-}
-
-/* Card Content */
-.review-icon {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    line-height: 1;
-}
-
-.rating-stars {
-    color: #ffd700;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-}
-
-.review-text {
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    flex-grow: 1;
-}
-
-/* Author Section */
-.review-author {
+/* Author Layout */
+.testimonial-author {
     display: flex;
     align-items: center;
-    border-top: 1px solid #eee;
+    justify-content: center;
+    border-top: 1px solid #f0f0f0;
     padding-top: 1.5rem;
+    width: 100%;
 }
 
-.review-avatar {
-    width: 50px;
-    height: 50px;
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--light-color);
     margin-right: 15px;
+    border: 3px solid var(--light-color);
 }
 
-.review-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 0;
+.testimonial-author h5 {
+    margin-bottom: 2px;
     font-size: 1.1rem;
-    color: var(--dark-color);
-}
-
-.review-location {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: block;
-}
-
-
-/* Custom Scroll Arrows (Minimalist) */
-.scroll-controls {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* More space between arrows */
-    margin-top: 20px;
-}
-
-.scroll-btn {
-    background: transparent;
-    border: none; /* No border/shape */
-    color: var(--dark-color);
-    font-size: 2rem; /* Larger icon */
-    cursor: pointer;
-    transition: var(--transition);
-    padding: 0 10px; /* Clickable area */
-    opacity: 0.6; /* Slight fade by default */
-}
-
-.scroll-btn:hover {
-    background: transparent;
+    font-weight: 700;
     color: var(--primary-color);
-    transform: scale(1.2) translateX(5px); /* Subtle movement */
+}
+
+.testimonial-author p {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Carousel Indicators (The dots) */
+.carousel-indicators {
+    margin-bottom: -40px; /* Push below the card */
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    opacity: 0.3;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
     opacity: 1;
+    transform: scale(1.3);
+    background-color: var(--dark-color);
 }
 
-/* Specific hover movement for left arrow */
-#scrollLeft:hover {
-    transform: scale(1.2) translateX(-5px);
-}
 
-/* Responsive Widths */
-@media (min-width: 768px) {
-    .scroll-card-wrapper { flex: 0 0 60%; }
-}
 
-@media (min-width: 992px) {
-    .scroll-card-wrapper { flex: 0 0 35%; }
-}
 /* =========================================
    12. FOOTER
    ========================================= */
