@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Artistry Studio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html" class="sidebar-brand">Artistry Admin</a>
+        
+        <div class="d-flex flex-column">
+            <a href="#" class="nav-link-admin active" onclick="switchTab('dashboard')">
+                <i class="bi bi-grid-1x2-fill"></i> Dashboard
+            </a>
+            <a href="#" class="nav-link-admin" onclick="switchTab('pages')">
+                <i class="bi bi-laptop-fill"></i> Site Content
+            </a>
+            <a href="#" class="nav-link-admin" onclick="switchTab('artworks')">
+                <i class="bi bi-palette-fill"></i> Artworks
+            </a>
+            <a href="#" class="nav-link-admin" onclick="switchTab('orders')">
+                <i class="bi bi-bag-check-fill"></i> Orders
+            </a>
+            <a href="#" class="nav-link-admin" onclick="switchTab('messages')">
+                <i class="bi bi-envelope-fill"></i> Messages
+            </a>
+            <div class="mt-5 border-top border-secondary pt-3">
+                <a href="index.html" class="nav-link-admin">
+                    <i class="bi bi-box-arrow-left"></i> Logout / View Site
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        
+        <div class="admin-topbar fade-in">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-dark d-lg-none me-3 border-0" id="sidebarToggle">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+                <h4 class="mb-0 font-playfair" id="pageTitle">Overview</h4>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none text-dark" data-bs-toggle="dropdown">
+                        <img src="https://images.unsplash.com/photo-1658314756129-5b27f344b65b?w=100&q=80" class="rounded-circle me-2" width="40" height="40" alt="Admin">
+                        <div class="d-none d-md-block">
+                            <small class="d-block fw-bold">Alex Morgan</small>
+                            <small class="text-muted" style="font-size: 0.75rem;">Administrator</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard-tab" class="tab-content fade-in delay-1">
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-light-color text-primary"><i class="bi bi-palette"></i></div>
+                        <div><h3 class="mb-0 fw-bold">156</h3><small class="text-muted">Total Artworks</small></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-light-color text-success"><i class="bi bi-currency-dollar"></i></div>
+                        <div><h3 class="mb-0 fw-bold">₹1.2L</h3><small class="text-muted">Total Revenue</small></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-light-color text-warning"><i class="bi bi-bag"></i></div>
+                        <div><h3 class="mb-0 fw-bold">24</h3><small class="text-muted">Pending Orders</small></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-light-color text-info"><i class="bi bi-people"></i></div>
+                        <div><h3 class="mb-0 fw-bold">8.5k</h3><small class="text-muted">Site Visits</small></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-light border text-center p-5 rounded-4">
+                <p class="text-muted mb-0">Use the <strong>"Site Content"</strong> tab to edit Homepage, About, Gallery, Shop, and Contact sections.</p>
+            </div>
+        </div>
+
+        <div id="pages-tab" class="tab-content d-none fade-in">
+            
+            <ul class="nav nav-pills cms-pill-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#cms-home">Home</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cms-about">About</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cms-gallery">Gallery</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cms-shop">Shop</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cms-contact">Contact</button></li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                
+                <div class="tab-pane fade show active" id="cms-home">
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Hero Section</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Background Image URL</label>
+                                <input type="text" class="form-control" value="https://images.unsplash.com/photo-1758521233238...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Main Heading</label>
+                                <input type="text" class="form-control" value="Emotions on Canvas">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Subtext</label>
+                                <textarea class="form-control" rows="2">Discover a world of vibrant abstract expressionism...</textarea>
+                            </div>
+                            <div class="text-end"><button class="btn btn-primary rounded-pill px-4">Update Hero</button></div>
+                        </form>
+                    </div>
+
+                    <div class="page-edit-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                            <h5 class="mb-0 font-playfair">Testimonials</h5>
+                            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalTestimonial">
+                                <i class="bi bi-plus-lg me-1"></i> Add Testimonial
+                            </button>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div><strong>Sarah Johnson</strong> <span class="text-muted small">- "Alex's artwork transformed..."</span></div>
+                                <div>
+                                    <button class="btn btn-sm btn-light text-primary"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div><strong>Michael Chen</strong> <span class="text-muted small">- "Commissioning a piece was..."</span></div>
+                                <div>
+                                    <button class="btn btn-sm btn-light text-primary"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="cms-about">
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Page Header</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12"><label class="form-label small fw-bold">Image URL</label><input type="text" class="form-control" value="about-bg.jpg"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Title</label><input type="text" class="form-control" value="About the Artist"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Subtext</label><input type="text" class="form-control" value="Milestones in my artistic journey"></div>
+                            </div>
+                            <div class="text-end mt-3"><button class="btn btn-primary rounded-pill px-4">Update Header</button></div>
+                        </form>
+                    </div>
+
+                    <div class="page-edit-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                            <h5 class="mb-0 font-playfair">Awards & Recognition</h5>
+                            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalAward">
+                                <i class="bi bi-plus-lg me-1"></i> Add Award
+                            </button>
+                        </div>
+                        
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item p-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://plus.unsplash.com/premium_photo-1712913073791-3589bc2aeda8?w=100" class="admin-thumb" alt="Award 1">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0">International Art Excellence</h6>
+                                        <small class="text-muted fw-bold">First Prize • 2023</small>
+                                        <p class="mb-0 small text-muted">Awarded in Paris for the "Ethereal Dreams" series.</p>
+                                    </div>
+                                    <div class="ms-3">
+                                        <button class="btn btn-sm btn-light text-primary rounded-circle"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-light text-danger rounded-circle"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item p-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=100" class="admin-thumb" alt="Award 2">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0">Museum Collection</h6>
+                                        <small class="text-muted fw-bold">Permanent Acquisition • 2021</small>
+                                        <p class="mb-0 small text-muted">"Whispers of the Coast" acquired by MoMA San Francisco.</p>
+                                    </div>
+                                    <div class="ms-3">
+                                        <button class="btn btn-sm btn-light text-primary rounded-circle"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-light text-danger rounded-circle"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="cms-gallery">
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Page Header</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12"><label class="form-label small fw-bold">Image URL</label><input type="text" class="form-control" value="gallery-bg.jpg"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Title</label><input type="text" class="form-control" value="The Gallery"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Subtext</label><input type="text" class="form-control" value="Explore the collection"></div>
+                            </div>
+                            <div class="text-end mt-3"><button class="btn btn-primary rounded-pill px-4">Update</button></div>
+                        </form>
+                    </div>
+
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Studio Insights</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Video Embed URL</label>
+                                <input type="text" class="form-control" placeholder="https://youtube.com/embed/...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Description Text</label>
+                                <textarea class="form-control" rows="3">A look behind the scenes...</textarea>
+                            </div>
+                            <div class="text-end"><button class="btn btn-primary rounded-pill px-4">Update Insights</button></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="cms-shop">
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Page Header</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12"><label class="form-label small fw-bold">Image URL</label><input type="text" class="form-control" value="shop-bg.jpg"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Title</label><input type="text" class="form-control" value="Art Shop"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Subtext</label><input type="text" class="form-control" value="Bring art home"></div>
+                            </div>
+                            <div class="text-end mt-3"><button class="btn btn-primary rounded-pill px-4">Update</button></div>
+                        </form>
+                    </div>
+
+                    <div class="page-edit-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                            <h5 class="mb-0 font-playfair">Upcoming Exhibitions</h5>
+                            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalExhibition">
+                                <i class="bi bi-plus-lg me-1"></i> Add Exhibition
+                            </button>
+                        </div>
+
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item p-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1632127257185-5d1261e46d93?w=100" class="admin-thumb" alt="Exhibition 1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span class="badge bg-success me-2">March 2024</span>
+                                            <h6 class="mb-0">"Urban Rhythms"</h6>
+                                        </div>
+                                        <p class="mb-0 small fw-bold text-primary">Solo Exhibition</p>
+                                        <small class="text-muted">Metropolitan Art Gallery, NYC</small>
+                                    </div>
+                                    <div class="ms-3">
+                                        <button class="btn btn-sm btn-light text-primary rounded-circle"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-light text-danger rounded-circle"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item p-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=100" class="admin-thumb" alt="Exhibition 2">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span class="badge bg-primary me-2">June 2024</span>
+                                            <h6 class="mb-0">"Coastal Impressions"</h6>
+                                        </div>
+                                        <p class="mb-0 small fw-bold text-primary">Group Show</p>
+                                        <small class="text-muted">Oceanfront Gallery, Santa Monica</small>
+                                    </div>
+                                    <div class="ms-3">
+                                        <button class="btn btn-sm btn-light text-primary rounded-circle"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-light text-danger rounded-circle"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="cms-contact">
+                    <div class="page-edit-card">
+                        <h5 class="mb-4 font-playfair border-bottom pb-2">Page Header</h5>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12"><label class="form-label small fw-bold">Image URL</label><input type="text" class="form-control" value="contact-bg.jpg"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Title</label><input type="text" class="form-control" value="Get in Touch"></div>
+                                <div class="col-6"><label class="form-label small fw-bold">Subtext</label><input type="text" class="form-control" value="Let's create something beautiful"></div>
+                            </div>
+                            <div class="text-end mt-3"><button class="btn btn-primary rounded-pill px-4">Update</button></div>
+                        </form>
+                    </div>
+
+                    <div class="page-edit-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                            <h5 class="mb-0 font-playfair">Common Questions (FAQ)</h5>
+                            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalFAQ">
+                                <i class="bi bi-plus-lg me-1"></i> Add Question
+                            </button>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <div>
+                                    <h6 class="mb-1">Do you do commissions?</h6>
+                                    <small class="text-muted">Yes, I accept a limited number...</small>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-light text-primary"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="artworks-tab" class="tab-content d-none fade-in">
+            <div class="table-card">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="mb-0">Gallery Inventory</h5>
+                    <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#addArtModal">
+                        <i class="bi bi-plus-lg me-2"></i> Add New Art
+                    </button>
+                </div>
+                <div class="alert alert-light border">Artworks table goes here...</div>
+            </div>
+        </div>
+
+        <div id="orders-tab" class="tab-content d-none fade-in">
+            <div class="table-card"><h5 class="mb-4">Full Order History</h5><div class="alert alert-light border">Orders table goes here...</div></div>
+        </div>
+
+        <div id="messages-tab" class="tab-content d-none fade-in">
+            <div class="table-card"><h5 class="mb-4">Messages</h5><div class="alert alert-light border">Messages list goes here...</div></div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="modalAward" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0"><h5 class="font-playfair fw-bold">Add Award</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-3">
+                    <form>
+                        <div class="mb-3"><label class="small fw-bold">Image</label><input type="file" class="form-control"></div>
+                        <div class="mb-3"><label class="small fw-bold">Award Title</label><input type="text" class="form-control" placeholder="e.g. International Art Excellence"></div>
+                        <div class="mb-3"><label class="small fw-bold">Subtitle / Date</label><input type="text" class="form-control" placeholder="e.g. First Prize • 2023"></div>
+                        <div class="mb-3"><label class="small fw-bold">Description</label><textarea class="form-control" rows="2" placeholder="e.g. Awarded in Paris..."></textarea></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0"><button class="btn btn-primary rounded-pill px-4">Save Award</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalExhibition" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0"><h5 class="font-playfair fw-bold">Add Exhibition</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-3">
+                    <form>
+                        <div class="mb-3"><label class="small fw-bold">Image</label><input type="file" class="form-control"></div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6"><label class="small fw-bold">Badge Text</label><input type="text" class="form-control" placeholder="e.g. March 2024"></div>
+                            <div class="col-6"><label class="small fw-bold">Exhibition Title</label><input type="text" class="form-control" placeholder="e.g. Urban Rhythms"></div>
+                        </div>
+                        <div class="mb-3"><label class="small fw-bold">Type</label><input type="text" class="form-control" placeholder="e.g. Solo Exhibition"></div>
+                        <div class="mb-3"><label class="small fw-bold">Location</label><input type="text" class="form-control" placeholder="e.g. Metropolitan Art Gallery, NYC"></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0"><button class="btn btn-primary rounded-pill px-4">Save Exhibition</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTestimonial" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0"><h5 class="font-playfair fw-bold">Add Testimonial</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-3">
+                    <form>
+                        <div class="mb-3"><input type="text" class="form-control" placeholder="Client Name"></div>
+                        <div class="mb-3"><input type="text" class="form-control" placeholder="Role/Location"></div>
+                        <div class="mb-3"><textarea class="form-control" rows="3" placeholder="Quote..."></textarea></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0"><button class="btn btn-primary rounded-pill px-4">Save</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalFAQ" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0"><h5 class="font-playfair fw-bold">Add Question</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-3">
+                    <form>
+                        <div class="mb-3"><input type="text" class="form-control" placeholder="Question"></div>
+                        <div class="mb-3"><textarea class="form-control" rows="3" placeholder="Answer..."></textarea></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0"><button class="btn btn-primary rounded-pill px-4">Save</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addArtModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title font-playfair fw-bold">Add New Artwork</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-4">
+                    <form>
+                        <div class="mb-3"><label class="form-label small text-muted fw-bold">Title</label><input type="text" class="form-control" placeholder="Artwork Name"></div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6"><select class="form-select"><option>Oil</option><option>Watercolor</option></select></div>
+                            <div class="col-6"><input type="number" class="form-control" placeholder="Price"></div>
+                        </div>
+                        <div class="mb-3"><input type="file" class="form-control"></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0"><button class="btn btn-primary rounded-pill px-4">Save</button></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -60,54 +60,6 @@ h2.section-title {
 }
 
 /* =========================================
-   2. NAVBAR (Glassmorphism)
-   ========================================= */
-/* .navbar {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: var(--glass-border);
-    padding: 1rem 0;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-}
-
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    color: var(--dark-color) !important;
-}
-
-.nav-link {
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--dark-color) !important;
-    margin: 0 1rem;
-    position: relative;
-    letter-spacing: 0.5px;
-    padding-bottom: 5px;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-} */
-
-/* =========================================
    2. NAVBAR DESIGN: "THE FLOATING PILL"
    ========================================= */
 .navbar {
@@ -156,13 +108,7 @@ h2.section-title {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Remove the underline effect from previous design */
-/* .nav-link::after { 
-     background-color: var(--dark-color);
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
- } */
+
 
 /* Mobile Dropdown Styling */
 @media (max-width: 991px) {
@@ -824,6 +770,167 @@ footer h5 { color: #fff; font-size: 1.1rem; margin-bottom: 1.5rem; }
     text-decoration: none;
 }
 .social-icons a:hover { background: var(--accent-color); transform: translateY(-3px); }
+
+
+ /* --- Admin Specific Layout --- */
+ /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background-color: var(--dark-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding-top: 20px;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .sidebar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0 25px;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .nav-link-admin {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: 0.3s;
+            border-left: 3px solid transparent;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .nav-link-admin:hover, .nav-link-admin.active {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border-left-color: var(--accent-color);
+        }
+
+        .nav-link-admin i { margin-right: 15px; font-size: 1.1rem; }
+
+        /* Main Content Wrapper */
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        /* Top Bar */
+        .admin-topbar {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* CMS Styles */
+        .page-edit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
+        }
+
+        .cms-pill-nav .nav-link {
+            color: var(--text-muted);
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            background: white;
+        }
+
+
+        .cms-pill-nav .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Tables & Lists */
+        .table-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .table thead th {
+            border-bottom: 2px solid #f0f0f0;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+
+        .table tbody td {
+            vertical-align: middle;
+            padding: 15px 0.75rem;
+            color: var(--dark-color);
+            border-bottom: 1px solid #f8f8f8;
+        }
+
+        .list-group-item {
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            border-radius: 12px !important;
+            transition: transform 0.2s;
+        }
+        .list-group-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .admin-thumb {
+            width: 60px; height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .stat-icon {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.active { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+        }
 
 /* =========================================
    13. ANIMATIONS

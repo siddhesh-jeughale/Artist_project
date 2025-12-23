@@ -350,4 +350,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 3000);
                 }, 1500);
             });
-        });    
+        });   
+        
+// <-----------admin panel-------->
+ function switchTab(tabName) {
+            document.querySelectorAll('.nav-link-admin').forEach(link => link.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.querySelectorAll('.main-content > .tab-content').forEach(content => content.classList.add('d-none'));
+            const selectedContent = document.getElementById(tabName + '-tab');
+            if (selectedContent) {
+                selectedContent.classList.remove('d-none');
+                const titles = {
+                    'dashboard': 'Overview',
+                    'pages': 'Manage Site Content',
+                    'artworks': 'Manage Artworks',
+                    'orders': 'Order History',
+                    'messages': 'Messages'
+                };
+                document.getElementById('pageTitle').textContent = titles[tabName] || 'Overview';
+            }
+        }
+
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        toggleBtn.addEventListener('click', () => { sidebar.classList.toggle('active'); });
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 992) {
+                if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
